@@ -12,8 +12,17 @@ nav {
   color: #F22A38;
 }
 
+
+.up:hover {
+  color: #7F6A4B;
+}
+
 .down {
   color: #9E896A;
+}
+
+.down:hover {
+  color: #7F6A4B;
 }
 
 .score {
