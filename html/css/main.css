@@ -1,6 +1,19 @@
+
+/* ------------ Base Styles ------------ */
+
+
 nav {
   height: 50px;
-  background-color: #f7f7f7;
+  color: #FFF;
+  background-color: #0B1F32;
+}
+
+.up {
+  color: #F22A38;
+}
+
+.down {
+  color: #9E896A;
 }
 
 .score {
@@ -11,7 +24,7 @@ nav {
 }
 
 .frame-a {
-  background-color: #e9ecef;
+  background-color: #E6E8EA;
   height: 80px;
   border: solid 1px black;
 }
@@ -34,15 +47,30 @@ nav {
   border-left: solid 1px black;
 }
 
-.frame-change {
+.total-score {
   position: fixed;
   width: 100%;
-  height: 130px;
-  bottom: 0;
-  border-top: solid 1px black;
-  background: #FFF;
+  bottom: 130;
 }
 
-.frame-btn {
+.prev-frame {
+  bottom: 0;
+  border: solid 6px #7F6A4B;
+  border-right: solid 3px #7F6A4B;
+  background: #9E896A;
   height: 130px;
+  padding-top: 2.5rem;
+  position: fixed;
+  text-align: center;
+}
+
+.next-frame {
+  bottom: 0;
+  border: solid 6px #7F6A4B;
+  border-left: solid 3px #7F6A4B;
+  background: #9E896A;
+  height: 130px;
+  padding-top: 2.5rem;
+  position: fixed;
+  text-align: center;
 }
