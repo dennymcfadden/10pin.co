@@ -119,18 +119,32 @@ html {
   max-width: 16.666667%;
 }
 
-/* Custom class for scoreboard grid */
+/* Custom classes for scoreboard grid */
 .col-frame {
   -ms-flex: 0 0 21%;
       flex: 0 0 21%;
   max-width: 21%;
 }
 
-/* Custom class for tenth frame */
 .col-frame10 {
   -ms-flex: 0 0 31.5%;
       flex: 0 0 31.5%;
   max-width: 31.5%;
+}
+
+/* Scoreboard grid fits to 100% above 768px */
+@media (min-width: 768px) {
+.col-frame {
+  -ms-flex: 0 0 9.5238%;
+      flex: 0 0 9.5238%;
+  max-width: 9.5238%;
+}
+
+.col-frame10 {
+  -ms-flex: 0 0 14.2857%;
+      flex: 0 0 14.2857%;
+  max-width: 14.2857%;
+}
 }
 
 .col-3 {

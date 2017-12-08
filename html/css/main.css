@@ -5,24 +5,29 @@
 nav {
   height: 50px;
   color: #FFF;
-  background-color: #0B1F32;
+  background-color: var(--navy);
+}
+
+nav a {
+  color: var(--blue);
+  font-size: 1.2rem;
+  line-height: 1.3rem;
 }
 
 .up {
-  color: #F22A38;
+  color: var(--red-1);
 }
 
-
 .up:hover {
-  color: #7F6A4B;
+  color: var(--red-2);
 }
 
 .down {
-  color: #9E896A;
+  color: var(--gold-1);
 }
 
 .down:hover {
-  color: #7F6A4B;
+  color: var(--gold-2);
 }
 
 .score {
@@ -33,53 +38,45 @@ nav {
 }
 
 .frame-a {
-  background-color: #E6E8EA;
+  background-color: var(--white);
   height: 80px;
-  border: solid 1px black;
 }
 
 .frame-b {
-  background-color: #FFF;
+  background-color: var(--gray-1);
   height: 80px;
-  border-bottom: solid 1px black;
-  border-top: solid 1px black;
 }
 
 .ball1 {
   height: 30px;
-  border-bottom: solid 1px black;
 }
 
 .ball2 {
+  background-color: var(--gray-2);
   height: 30px;
-  border-bottom: solid 1px black;
-  border-left: solid 1px black;
 }
 
 .total-score {
   position: fixed;
   width: 100%;
   bottom: 130;
+  padding: 0 1rem 0 1rem;
 }
 
 .prev-frame {
   bottom: 0;
-  border: solid 6px #7F6A4B;
-  border-right: solid 3px #7F6A4B;
-  background: #9E896A;
+  background: var(--gold-2);
   height: 130px;
-  padding-top: 2.5rem;
+  padding-top: 2.7rem;
   position: fixed;
   text-align: center;
 }
 
 .next-frame {
   bottom: 0;
-  border: solid 6px #7F6A4B;
-  border-left: solid 3px #7F6A4B;
-  background: #9E896A;
+  background: var(--gold-1);
   height: 130px;
-  padding-top: 2.5rem;
+  padding-top: 2.7rem;
   position: fixed;
   text-align: center;
 }

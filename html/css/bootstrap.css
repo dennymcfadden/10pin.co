@@ -5,34 +5,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #868e96;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #868e96;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
+  --navy: #0B1F32;
+  --blue: #1D67AE;
+  --gold-1: #9E896A;
+  --gold-2: #7F6A4B;
+  --gray-1: #F5F6F8;
+  --gray-2: #E6E8EA;
+  --red-1: #F22A38;
+  --red-2: #7F6A4B;
+  --white: #FFF;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: 'Roboto', sans-serif;
+  --font-family-condensed: 'Miriam Libre', sans-serif;
 }
 
 @media print {
@@ -100,7 +88,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: var(--font-family-sans-serif);
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -118,7 +106,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family-sans-serif);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -138,7 +126,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 0.5rem;
 }
 
@@ -428,10 +416,19 @@ template {
   display: none !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  font-family: var(--font-family-condensed);
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h5, h6,
+.h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-sans-serif);
   font-weight: 500;
   line-height: 1.2;
   color: inherit;
