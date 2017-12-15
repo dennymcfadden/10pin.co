@@ -1,4 +1,3 @@
-$('pin').click(function() {
-    $(this).removeClass('ss-target down');
-    $(this).addClass('ss-record up');
+$('#pin').click(function() { 
+    $('div.ss-target').toggleClass('ss-record');
 });

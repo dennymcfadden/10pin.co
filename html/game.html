@@ -1,0 +1,189 @@
+<html>
+
+<head>
+  <!-- Basic Page Needs -->
+  <title>10Pin</title>
+  <meta name="description" content="#1 Bowling Score Tracking App">
+  <meta charset="utf-8">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap-reboot.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="fonts/ss-standard.css">
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:700|Roboto:500" rel="stylesheet">
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav class="text-center p-3">
+      <div class="row">
+        <div class="col-2 text-left">
+          <a href="index.html" class="ss-navigateleft"></a>
+        </div>
+        <div class="col-8 text-center">
+          <h6 style="margin-top: 0;">Frame 3 - Ball 1</h6>
+        </div>
+        <div class="col-2 text-right">
+          <a href="mailto:hi@10pin.co" class="ss-help"></a>
+        </div>
+      </div>
+  </nav>
+  <!-- Scoring bar -->
+  <div class="row no-gutters score">
+      <div class="col-frame frame-a">
+        <div class="row no-gutters">
+          <div class="col-6 text-center ball1">
+            <select id="roll">
+              <option value=""></options>
+              <option value="1">1</options>
+              <option value="2">2</options>
+              <option value="3">3</options>
+              <option value="1">4</options>
+              <option value="2">5</options>
+              <option value="3">6</options>
+              <option value="1">7</options>
+              <option value="2">8</options>
+              <option value="3">9</options>
+              <option value="1">10</options>
+            </select>
+          </div>
+          <div class="col-6 text-center ball2"><h6>4</h6></div>
+          <div class="col-12 text-center pt-2"><h4>5</h4></div>  
+        </div>
+      </div>
+      <div class="col-frame frame-b">
+        <div class="row no-gutters">
+          <div class="col-6 text-center ball1"><h6>5</h6></div>
+          <div class="col-6 text-center ball2"><h6>/</h6></div>
+          <div class="col-12 text-center pt-2"><h4>23</h4></div>
+        </div>
+      </div>
+      <div class="col-frame frame-a">
+        <div class="row no-gutters">
+          <div class="col-6 text-center ball1"><h6>7</h6></div>
+          <div class="col-6 text-center ball2"><h6></h6></div>
+          <div class="col-12 text-center pt-2"><h4></h4></div>
+        </div>
+      </div>
+      <div class="col-frame frame-b">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame frame-a">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame frame-b">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame frame-a">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame frame-b">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame frame-a">
+        <div class="row no-gutters">
+          <div class="col-6 ball1"></div>
+          <div class="col-6 ball2"></div>
+        </div>
+      </div>
+      <div class="col-frame10 frame-b">
+        <div class="row no-gutters">
+          <div class="col-4 ball1"></div>
+          <div class="col-4 ball2"></div>
+          <div class="col-4 ball2"></div>
+        </div>
+      </div>
+  </div>
+  <!-- Pins -->
+  <div class="container pt-3 animated">
+    <div class="row text-center justify-content-center align-items-center pins" style="height: 70px;">
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="pin ss-target down"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-record up"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-record up"></h4>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-record up"></h4>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
+      <div class="col-3 col-md-2 col-lg-1">
+        <h4 class="ss-target down"></h4>
+      </div>
+    </div>
+  </div>
+  <!-- Total Score -->
+  <div class="row no-gutters total-score">
+    <div class="col-6 text-left">
+      <h6 style="margin-bottom: 0;">SCORE</h6>
+      <h1 style="margin-top: 0;">35</h1>  
+    </div>
+    <div class="col-6 text-right">
+      <h6 style="margin-bottom: 0;">MAX</h6>
+      <h1 style="margin-top: 0;">280</h1>  
+    </div>
+  </div>
+  <!-- Frame Changer -->
+  <div class="row no-gutters">
+    <div class="col-6 prev-frame">
+      <h1><a href="#" class="ss-icon">navigateleft</a></h1>  
+    </div>
+    <div class="col-6 offset-6 next-frame">
+      <h1><a href="#" class="ss-icon">navigateright</a></h1>  
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script
+    src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"> 
+  </script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/score_logic.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>

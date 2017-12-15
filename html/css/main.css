@@ -80,3 +80,19 @@ nav a {
   position: fixed;
   text-align: center;
 }
+
+.bgContainer{
+  width:50%;
+  height:500px;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+.arrowUp{
+  width:50vw;
+  height:50vw;
+  position: absolute;
+  top: 30vw;
+  transform: rotate(45deg);
+  background: purple;
+}
