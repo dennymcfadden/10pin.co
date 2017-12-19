@@ -352,6 +352,17 @@ input[type="month"] {
   -webkit-appearance: listbox;
 }
 
+input[type="number"] {
+  border: none;
+  text-align: center;
+  border-radius: 0;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border: solid 3px var(--red-1);
+}
+
 textarea {
   overflow: auto;
   resize: vertical;
@@ -382,7 +393,8 @@ progress {
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto;
+  -webkit-appearance: none; 
+  margin: 0;
 }
 
 [type="search"] {
