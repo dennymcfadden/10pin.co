@@ -33,140 +33,62 @@
       </div>
   </nav>
   <!-- Scoring bar -->
-  <div class="row no-gutters score">
-      <div class="col-frame frame-a">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="a1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="a2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameOneScore"></span></h4>
-          </div>  
-        </div>
+  <div class="container-fluid no-gutters score">
+    <div class="row" style="flex-wrap: nowrap;">
+      <input id="a1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="a2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="b1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="b2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="c1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="c2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="d1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="d2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="e1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="e2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="f1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="f2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="g1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="g2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="h1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="h2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="i1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="i2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="j1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+      <input id="j2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
+      <input id="j3" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+    </div>
+    <div class="row" style="flex-wrap: nowrap;">
+      <div class="col-frame frame-a pt-2">
+        <h4><span id="frameOneScore"></span></h4>
       </div>
-      <div class="col-frame frame-b">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="b1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="b2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameTwoScore"></span></h4>
-          </div>
-        </div>
+      <div class="col-frame frame-b pt-2">
+        <h4><span id="frameTwoScore"></span></h4>
       </div>
-      <div class="col-frame frame-a">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="c1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="c2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameThreeScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-a pt-2">
+        <h4><span id="frameThreeScore"></span></h4>
       </div>
-      <div class="col-frame frame-b">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="d1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="d2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameFourScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-b pt-2">
+        <h4><span id="frameFourScore"></span></h4>
       </div>
-      <div class="col-frame frame-a">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="e1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="e2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameFiveScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-a pt-2">
+        <h4><span id="frameFiveScore"></span></h4>
       </div>
-      <div class="col-frame frame-b">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="f1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="f2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameSixScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-b pt-2">
+        <h4><span id="frameSixScore"></span></h4>
       </div>
-      <div class="col-frame frame-a">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="g1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="g2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameSevenScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-a pt-2">
+        <h4><span id="frameSevenScore"></span></h4>
       </div>
-      <div class="col-frame frame-b">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="h1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="h2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameEightScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-b pt-2">
+        <h4><span id="frameEightScore"></span></h4>
       </div>
-      <div class="col-frame frame-a">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <input id="i1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-6">
-            <input id="i2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameNineScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame frame-a pt-2">
+        <h4><span id="frameNineScore"></span></h4>
       </div>
-      <div class="col-frame10 frame-b">
-        <div class="row no-gutters">
-          <div class="col-4">
-            <input id="j1" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-4">
-            <input id="j2" type="number" pattern="[0-9]*" class="ball2">
-          </div>
-          <div class="col-4">
-            <input id="j3" type="number" pattern="[0-9]*" class="ball1">
-          </div>
-          <div class="col-12 text-center pt-2">
-            <h4><span id="frameTenScore"></span></h4>
-          </div>  
-        </div>
+      <div class="col-frame10 frame-b pt-2">
+        <h4><span id="frameTenScore"></span></h4>
       </div>
+    </div>
   </div>
     <div class="container pt-3 animated">
       <div class="row text-center justify-content-center align-items-center pins" style="height: 70px;">
@@ -221,11 +143,11 @@
   </div>
   <!-- Frame Changer -->
   <div class="row no-gutters">
-    <div class="col-6 prev-frame">
-      <h1><a href="#" class="ss-icon">navigateleft</a></h1>  
+    <div class="col-6 frame-change">
+      <h1 style="color: #FFF;"><i id="prevBtn" value="focus prev" class="ss-icon">navigateleft</i></h1>  
     </div>
-    <div class="col-6 offset-6 next-frame">
-      <h1><a href="#" class="ss-icon">navigateright</a></h1>  
+    <div class="col-6 offset-6 frame-change">
+      <h1 style="color: #FFF;"><i id="nextBtn" value="focus next" class="ss-icon">navigateright</i></h1>  
     </div>
   </div>
   <!-- jQuery -->

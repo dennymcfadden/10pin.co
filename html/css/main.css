@@ -1,6 +1,5 @@
 
-/* ------------ Base Styles ------------ */
-
+/* ------------ Nav ------------ */
 
 nav {
   height: 50px;
@@ -20,6 +19,8 @@ nav .submit {
   line-height: 1.3rem;
 }
 
+/* ------------ Pins ------------ */
+
 .up {
   color: var(--red-1);
 }
@@ -36,21 +37,22 @@ nav .submit {
   color: var(--gold-2);
 }
 
+/* ------------ Scoreboard ------------ */
+
 .score {
-  height: 80px;
-  background-color: #f7f7f7;
   overflow: scroll; 
-  flex-wrap: nowrap;
 }
 
 .frame-a {
   background-color: var(--white);
-  height: 80px;
+  height: 50px;
+  text-align: center;
 }
 
 .frame-b {
   background-color: var(--gray-1);
-  height: 80px;
+  height: 50px;
+  text-align: center;
 }
 
 .ball1 {
@@ -71,7 +73,7 @@ nav .submit {
   padding: 0 1rem 0 1rem;
 }
 
-.prev-frame {
+.frame-change {
   bottom: 0;
   background: var(--gold-2);
   height: 130px;
@@ -80,13 +82,8 @@ nav .submit {
   text-align: center;
 }
 
-.next-frame {
-  bottom: 0;
+.frame-change:hover {
   background: var(--gold-1);
-  height: 130px;
-  padding-top: 2.7rem;
-  position: fixed;
-  text-align: center;
 }
 
 .bgContainer{

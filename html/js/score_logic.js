@@ -1,3 +1,31 @@
+$(function(){
+  //focus first input fields
+  $(".rollInput:first").focus();
+  var currentFocusedInput = $(".rollInput:first");
+
+  // next button
+  $("#nextBtn").click(function(){
+     var nextInputToFocus = currentFocusedInput.next('.rollInput');
+     if($(nextInputToFocus).length > 0)
+      {
+        currentFocusedInput = $(nextInputToFocus);
+      }
+      $(currentFocusedInput).focus();
+  });
+
+  // previous button
+  $("#prevBtn").click(function(){
+     var prevInputToFocus = currentFocusedInput.prev('.rollInput');
+     if($(prevInputToFocus).length > 0)
+      {
+        currentFocusedInput = $(prevInputToFocus);
+      }
+      $(currentFocusedInput).focus();
+  });
+});
+
+
+
 $("#submit").click(function() {
     // Set variable for each ball where A/B/C refers to the frame #, and 1/2 refers to the ball #.
     const a1 = parseInt($("#a1").val());
@@ -208,7 +236,7 @@ $("#submit").click(function() {
       }
     }
 
-    // Store result of calcFrame{X} function in a variable
+    // Store results of calcFrame{X} functions in variables.
     var frameOneScore = calcFrameOne();
     var frameTwoScore = calcFrameTwo();
     var frameThreeScore = calcFrameThree();
@@ -220,7 +248,7 @@ $("#submit").click(function() {
     var frameNineScore = calcFrameNine();
     var frameTenScore = calcFrameTen();
 
-    // Calculate current score.
+    // Calculate current score based on latest completed frame.
     function currentScore() {
       if (frameTenScore) {
         return frameTenScore;
@@ -247,7 +275,7 @@ $("#submit").click(function() {
       }
     }
 
-    // Calculate max score.
+    // Calculate maximum potential score.
     function maxScore() {
       if (frameTenScore) {
         return frameTenScore;
@@ -274,7 +302,7 @@ $("#submit").click(function() {
       }
     }
 
-    // Print results to page
+    // Print results to page.
     $("#frameOneScore").html(frameOneScore);
     $("#frameTwoScore").html(frameTwoScore);
     $("#frameThreeScore").html(frameThreeScore);
