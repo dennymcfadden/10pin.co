@@ -25,7 +25,7 @@
           <a href="index.html" class="ss-navigateleft"></a>
         </div>
         <div class="col-8 text-center">
-          <h6 style="margin-top: 0;">Frame 3 - Ball 1</h6>
+          <h6 style="margin-top: 0;"><span id="currentFrame"></span></h6>
         </div>
         <div class="col-2 text-right" id="submit">
           <i class="submit ss-icon">sync</i>
@@ -93,40 +93,40 @@
     <div class="container pt-3 animated">
       <div class="row text-center justify-content-center align-items-center pins" style="height: 70px;">
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-target down"></h4>
+          <h4 class="pin ss-record up"></h4>
         </div>
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
+          <h4 class="pin ss-record up"></h4>
         </div>
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-record up"></h4>
+          <h4 class="pin ss-record up"></h4>
         </div>
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-record up"></h4>
-        </div>
-      </div>
-      <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
-        </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
-        </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-record up"></h4>
+          <h4 class="pin ss-record up"></h4>
         </div>
       </div>
       <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
+          <h4 class="pin ss-record up"></h4>
         </div>
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
+          <h4 class="pin ss-record up"></h4>
+        </div>
+        <div class="col-3 col-md-2 col-lg-1">
+          <h4 class="pin ss-record up"></h4>
         </div>
       </div>
       <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
         <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="ss-target down"></h4>
+          <h4 class="pin ss-record up"></h4>
+        </div>
+        <div class="col-3 col-md-2 col-lg-1">
+          <h4 class="pin ss-record up"></h4>
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
+        <div class="col-3 col-md-2 col-lg-1">
+          <h4 class="pin ss-record up"></h4>
         </div>
       </div>
     </div>
@@ -143,11 +143,11 @@
   </div>
   <!-- Frame Changer -->
   <div class="row no-gutters">
-    <div class="col-6 frame-change">
-      <h1 style="color: #FFF;"><i id="prevBtn" value="focus prev" class="ss-icon">navigateleft</i></h1>  
+    <div class="col-6 frame-change" id="prevBtn" value="focus prev">
+      <h1 style="color: #FFF;"><i class="ss-icon">navigateleft</i></h1>  
     </div>
-    <div class="col-6 offset-6 frame-change">
-      <h1 style="color: #FFF;"><i id="nextBtn" value="focus next" class="ss-icon">navigateright</i></h1>  
+    <div class="col-6 offset-6 frame-change" id="nextBtn" value="focus next">
+      <h1 style="color: #FFF;"><i class="ss-icon">navigateright</i></h1>  
     </div>
   </div>
   <!-- jQuery -->

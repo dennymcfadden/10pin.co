@@ -1,31 +1,59 @@
-$(function(){
-  //focus first input fields
-  $(".rollInput:first").focus();
-  var currentFocusedInput = $(".rollInput:first");
-
-  // next button
-  $("#nextBtn").click(function(){
-     var nextInputToFocus = currentFocusedInput.next('.rollInput');
-     if($(nextInputToFocus).length > 0)
-      {
-        currentFocusedInput = $(nextInputToFocus);
+// Select whichever .rollInput is currently focused 
+$('.rollInput').focus(function() {
+  // Store the focused element's ID in a variable
+  const focused = this.id;
+  // Return appropiate string based on element's ID
+  if (focused==='a1') {
+        $("#currentFrame").html('Frame 1 / Ball 1');
+      } else if (focused==='a2') {
+        $("#currentFrame").html('Frame 1 / Ball 2');
+      } else if (focused==='b1') {
+        $("#currentFrame").html('Frame 2 / Ball 1');
+      } else if (focused==='b2') {
+        $("#currentFrame").html('Frame 2 / Ball 2');
+      } else if (focused==='c1') {
+        $("#currentFrame").html('Frame 3 / Ball 1');
+      } else if (focused==='c2') {
+        $("#currentFrame").html('Frame 3 / Ball 2');
+      } else if (focused==='d1') {
+        $("#currentFrame").html('Frame 4 / Ball 1');
+      } else if (focused==='d2') {
+        $("#currentFrame").html('Frame 4 / Ball 2');
+      } else if (focused==='e1') {
+        $("#currentFrame").html('Frame 5 / Ball 1');
+      } else if (focused==='e2') {
+        $("#currentFrame").html('Frame 5 / Ball 2');
+      } else if (focused==='f1') {
+        $("#currentFrame").html('Frame 6 / Ball 1');
+      } else if (focused==='f2') {
+        $("#currentFrame").html('Frame 6 / Ball 2');
+      } else if (focused==='g1') {
+        $("#currentFrame").html('Frame 7 / Ball 1');
+      } else if (focused==='g2') {
+        $("#currentFrame").html('Frame 7 / Ball 2');
+      } else if (focused==='h1') {
+        $("#currentFrame").html('Frame 8 / Ball 1');
+      } else if (focused==='h2') {
+        $("#currentFrame").html('Frame 8 / Ball 2');
+      } else if (focused==='i1') {
+        $("#currentFrame").html('Frame 9 / Ball 1');
+      } else if (focused==='i2') {
+        $("#currentFrame").html('Frame 9 / Ball 2');
+      } else if (focused==='j1') {
+        $("#currentFrame").html('Frame 10 / Ball 1');
+      } else if (focused==='j2') {
+        $("#currentFrame").html('Frame 10 / Ball 2');
+      } else if (focused==='j3') {
+        $("#currentFrame").html('Frame 10 / Ball 3');
+      } else {
+        $("#currentFrame").html('');
       }
-      $(currentFocusedInput).focus();
-  });
-
-  // previous button
-  $("#prevBtn").click(function(){
-     var prevInputToFocus = currentFocusedInput.prev('.rollInput');
-     if($(prevInputToFocus).length > 0)
-      {
-        currentFocusedInput = $(prevInputToFocus);
-      }
-      $(currentFocusedInput).focus();
-  });
 });
 
 
 
+
+// Scoring logic.
 $("#submit").click(function() {
     // Set variable for each ball where A/B/C refers to the frame #, and 1/2 refers to the ball #.
     const a1 = parseInt($("#a1").val());
@@ -316,4 +344,42 @@ $("#submit").click(function() {
     $("#currentScore").html(currentScore);
     $("#maxScore").html(maxScore);
 
+});
+
+
+
+// When user clicks the button
+$('.pin').click(function() {
+  // Toggle .bouncing on the .box
+  $(this).toggleClass('ss-target');
+  $(this).toggleClass('ss-record'); 
+  $(this).toggleClass('down'); 
+  $(this).toggleClass('up');
+});
+
+
+
+// Make the prev/next buttons progress through inputs
+$(function(){
+  //Focus on first input field
+  $(".rollInput:first").focus();
+  var currentFocusedInput = $(".rollInput:first");
+  // Next button shifts focus to next field
+  $("#nextBtn").click(function(){
+     var nextInputToFocus = currentFocusedInput.next('.rollInput');
+     if($(nextInputToFocus).length > 0)
+      {
+        currentFocusedInput = $(nextInputToFocus);
+      }
+      $(currentFocusedInput).focus();
+  });
+  // Prev button shifts focus to prev field
+  $("#prevBtn").click(function(){
+     var prevInputToFocus = currentFocusedInput.prev('.rollInput');
+     if($(prevInputToFocus).length > 0)
+      {
+        currentFocusedInput = $(prevInputToFocus);
+      }
+      $(currentFocusedInput).focus();
+  });
 });
