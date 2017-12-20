@@ -54,7 +54,7 @@ $('.rollInput').focus(function() {
 
 
 // Scoring logic.
-$("#submit").click(function() {
+$(".rollInput").change(function() {
     // Set variable for each ball where A/B/C refers to the frame #, and 1/2 refers to the ball #.
     const a1 = parseInt($("#a1").val());
     const a2 = parseInt($("#a2").val());
@@ -193,7 +193,7 @@ $("#submit").click(function() {
       if (g1===10 && h1===10 && i1) {
         const score = g1+h1+i1;
         return score + frameSixScore;
-      } else if (h1===10 && h1 && h2) {
+      } else if (g1===10 && h1 && h2) {
         const score = g1+h1+h2;
         return score + frameSixScore;
       } else if (g1+g2===10 && h1) {
