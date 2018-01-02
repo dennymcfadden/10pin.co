@@ -22,123 +22,224 @@
   <nav class="text-center p-3">
       <div class="row">
         <div class="col-2 text-left">
-          <a href="index.html" class="ss-navigateleft"></a>
         </div>
         <div class="col-8 text-center">
-          <h6 style="margin-top: 0;"><span id="currentFrame"></span></h6>
+          <h6 style="margin-top: 0;"><span id="currentFrame"  style="color: #FFF"></span> &#8212 <span id="currentBall"></span></h6>
         </div>
         <div class="col-2 text-right">
-          <a href="mailto:hi@10pin.co" class="ss-help"></a>
         </div>
       </div>
   </nav>
   <!-- Scoring bar -->
-  <div class="container-fluid no-gutters score">
-    <div class="row" style="flex-wrap: nowrap;">
-      <input id="a1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="a2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="b1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="b2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="c1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="c2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="d1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="d2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="e1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="e2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="f1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="f2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="g1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="g2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="h1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="h2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="i1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="i2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="j1" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
-      <input id="j2" type="number" pattern="[0-9]*" class="col-ball ball2 rollInput">
-      <input id="j3" type="number" pattern="[0-9]*" class="col-ball ball1 rollInput">
+  <div class="container-fluid no-gutters scoreBoard">
+    <!-- rollInputs -->
+    <div class="row" style="flex-wrap: nowrap; background-color: var(--gray-1);">
+      <div id="a1" class="col-ball ball ball1 rollInput">
+        <h6><span id="a1-input"></span></h6>
+      </div>
+      <div id="a2" class="col-ball ball ball2 rollInput">
+        <h6><span id="a2-input"></span></h6>
+      </div>
+      <div id="b1" class="col-ball ball ball1 rollInput">
+        <h6><span id="b1-input"></span></h6>
+      </div>
+      <div id="b2" class="col-ball ball ball2 rollInput">
+        <h6><span id="b2-input"></span></h6>
+      </div>
+      <div id="c1" class="col-ball ball ball1 rollInput">
+        <h6><span id="c1-input"></span></h6>
+      </div>
+      <div id="c2" class="col-ball ball ball2 rollInput">
+        <h6><span id="c2-input"></span></h6>
+      </div>
+      <div id="d1" class="col-ball ball ball1 rollInput">
+        <h6><span id="d1-input"></span></h6>
+      </div>
+      <div id="d2" class="col-ball ball ball2 rollInput">
+        <h6><span id="d2-input"></span></h6>
+      </div>
     </div>
-    <div class="row" style="flex-wrap: nowrap;">
-      <div class="col-frame frame-a pt-2">
+    <!-- frameScores -->
+    <div class="row" style="flex-wrap: nowrap; background-color: var(--gray-1);">
+      <div id="frameOne" class="col-frame frame pt-2">
         <h4><span id="frameOneScore"></span></h4>
       </div>
-      <div class="col-frame frame-b pt-2">
+      <div id="frameTwo" class="col-frame frame pt-2">
         <h4><span id="frameTwoScore"></span></h4>
       </div>
-      <div class="col-frame frame-a pt-2">
+      <div id="frameThree" class="col-frame frame pt-2">
         <h4><span id="frameThreeScore"></span></h4>
       </div>
-      <div class="col-frame frame-b pt-2">
+      <div id="frameFour" class="col-frame frame pt-2">
         <h4><span id="frameFourScore"></span></h4>
-      </div>
-      <div class="col-frame frame-a pt-2">
-        <h4><span id="frameFiveScore"></span></h4>
-      </div>
-      <div class="col-frame frame-b pt-2">
-        <h4><span id="frameSixScore"></span></h4>
-      </div>
-      <div class="col-frame frame-a pt-2">
-        <h4><span id="frameSevenScore"></span></h4>
-      </div>
-      <div class="col-frame frame-b pt-2">
-        <h4><span id="frameEightScore"></span></h4>
-      </div>
-      <div class="col-frame frame-a pt-2">
-        <h4><span id="frameNineScore"></span></h4>
-      </div>
-      <div class="col-frame10 frame-b pt-2">
-        <h4><span id="frameTenScore"></span></h4>
       </div>
     </div>
   </div>
-    <div class="container pt-3 animated">
-      <div class="row text-center justify-content-center align-items-center pins" style="height: 70px;">
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+  <!-- Pinsets -->
+  <div style="position: relative">
+    <!-- Pinset1 -->
+    <div id="pinset1" class="pinset container pt-3 animated invisible">
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
-        </div>
-      </div>
-      <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
-        </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
-        </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
       </div>
-      <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
       </div>
-      <div class="row text-center justify-content-center align-items-center" style="height: 70px;">
-        <div class="col-3 col-md-2 col-lg-1">
-          <h4 class="pin ss-record up"></h4>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
         </div>
       </div>
     </div>
-  <!-- Submit Button & Total Score -->
-  <div class="row no-gutters total-score">
-    <div class="col-6 text-left">
-      <h6 style="margin-bottom: 0;">SCORE</h6>
-      <h1 style="margin-top: 0;"><span id="currentScore">0</span></h1>  
+    <!-- Pinset2 -->
+    <div id="pinset2" class="pinset container pt-3 animated invisible">
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
     </div>
-    <div class="col-6 text-right">
-      <h6 style="margin-bottom: 0;">MAX</h6>
-      <h1 style="margin-top: 0;"><span id="maxScore">300</span></h1>  
+    <!-- Pinset3 -->
+    <div id="pinset3" class="pinset container pt-3 animated invisible">
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+    </div>
+    <!-- Pinset4 -->
+    <div id="pinset4" class="pinset container pt-3 animated invisible">
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-2">
+          <img src="images/pin.png" class="pin">
+        </div>
+      </div>
     </div>
   </div>
   <!-- Frame Changer -->

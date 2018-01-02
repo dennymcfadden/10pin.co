@@ -3,7 +3,7 @@
 
 nav {
   height: 50px;
-  color: #FFF;
+  color: var(--blue);
   background-color: var(--navy);
 }
 
@@ -21,49 +21,55 @@ nav .submit {
 
 /* ------------ Pins ------------ */
 
-.up {
-  color: var(--red-1);
+.pin {
+  height: 80px;
 }
 
-.up:hover {
-  color: var(--red-2);
+.up {
 }
 
 .down {
-  color: var(--gold-1);
+  opacity: 0.2;
 }
 
-.down:hover {
-  color: var(--red-1);
+.pinset {
+  position: absolute;
 }
 
 /* ------------ Scoreboard ------------ */
 
-.score {
+.scoreBoard {
   overflow: scroll; 
 }
 
-.frame-a {
-  background-color: var(--white);
+.frame {
+  border-right: 1px solid var(--gray-2);
   height: 50px;
   text-align: center;
 }
 
-.frame-b {
-  background-color: var(--gray-1);
-  height: 50px;
+.ball {
+  border-bottom: 1px solid var(--gray-2);
+  border-right: 1px solid var(--gray-2);
+  height: 30px;
   text-align: center;
 }
 
 .ball1 {
-  height: 30px;
-  width: 100%;
 }
 
 .ball2 {
-  background-color: var(--gray-2);
-  height: 30px; 
-  width: 100%;
+  border-left: 1px solid var(--gray-2);
+}
+
+.input-active {
+  background-color: var(--red-1);
+  border: none;
+  color: var(--white);
+}
+
+.frame-active {
+  background-color: var(--white);
 }
 
 .total-score {
@@ -89,15 +95,7 @@ nav .submit {
 .bgContainer{
   width:50%;
   height:500px;
-  background-color: #000000;
+  background-color: var(--black);
   position: relative;
   overflow: hidden;
-}
-.arrowUp{
-  width:50vw;
-  height:50vw;
-  position: absolute;
-  top: 30vw;
-  transform: rotate(45deg);
-  background: purple;
 }

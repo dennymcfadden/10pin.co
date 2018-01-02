@@ -14,6 +14,7 @@
   --red-1: #F22A38;
   --red-2: #F22A38;
   --white: #FFF;
+  --black: #212529;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -110,7 +111,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: var(--black);
   text-align: left;
   background-color: #E6E8EA;
 }
@@ -356,11 +357,15 @@ input[type="number"] {
   border: none;
   text-align: center;
   border-radius: 0;
+  color: transparent;
+  text-shadow: 0 0 0 var(--black);
 }
 
 input[type="number"]:focus {
   outline: none;
-  border: solid 3px var(--red-1);
+  background-color: var(--red-1);
+  color: transparent;
+  text-shadow: 0 0 0 var(--white);
 }
 
 textarea {

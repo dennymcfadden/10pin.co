@@ -1,82 +1,29 @@
-// Select whichever .rollInput is currently focused 
-$('.rollInput').focus(function() {
-  // Store the focused element's ID in a variable
-  const focused = this.id;
-  // Return appropiate string based on element's ID
-  if (focused==='a1') {
-        $("#currentFrame").html('Frame 1 / Ball 1');
-      } else if (focused==='a2') {
-        $("#currentFrame").html('Frame 1 / Ball 2');
-      } else if (focused==='b1') {
-        $("#currentFrame").html('Frame 2 / Ball 1');
-      } else if (focused==='b2') {
-        $("#currentFrame").html('Frame 2 / Ball 2');
-      } else if (focused==='c1') {
-        $("#currentFrame").html('Frame 3 / Ball 1');
-      } else if (focused==='c2') {
-        $("#currentFrame").html('Frame 3 / Ball 2');
-      } else if (focused==='d1') {
-        $("#currentFrame").html('Frame 4 / Ball 1');
-      } else if (focused==='d2') {
-        $("#currentFrame").html('Frame 4 / Ball 2');
-      } else if (focused==='e1') {
-        $("#currentFrame").html('Frame 5 / Ball 1');
-      } else if (focused==='e2') {
-        $("#currentFrame").html('Frame 5 / Ball 2');
-      } else if (focused==='f1') {
-        $("#currentFrame").html('Frame 6 / Ball 1');
-      } else if (focused==='f2') {
-        $("#currentFrame").html('Frame 6 / Ball 2');
-      } else if (focused==='g1') {
-        $("#currentFrame").html('Frame 7 / Ball 1');
-      } else if (focused==='g2') {
-        $("#currentFrame").html('Frame 7 / Ball 2');
-      } else if (focused==='h1') {
-        $("#currentFrame").html('Frame 8 / Ball 1');
-      } else if (focused==='h2') {
-        $("#currentFrame").html('Frame 8 / Ball 2');
-      } else if (focused==='i1') {
-        $("#currentFrame").html('Frame 9 / Ball 1');
-      } else if (focused==='i2') {
-        $("#currentFrame").html('Frame 9 / Ball 2');
-      } else if (focused==='j1') {
-        $("#currentFrame").html('Frame 10 / Ball 1');
-      } else if (focused==='j2') {
-        $("#currentFrame").html('Frame 10 / Ball 2');
-      } else if (focused==='j3') {
-        $("#currentFrame").html('Frame 10 / Ball 3');
-      } else {
-        $("#currentFrame").html('');
-      }
-});
-
-
-
+// Set variable for each ball
+let a1 = 0;
+let a2 = 0;
+let b1 = 0;
+let b2 = 0;
+let c1 = 0;
+let c2 = 0;
+let d1 = 0;
+let d2 = 0;
+let e1 = 0;
+let e2 = 0;
+let f1 = 0;
+let f2 = 0;
+let g1 = 0;
+let g2 = 0;
+let h1 = 0;
+let h2 = 0;
+let i1 = 0;
+let i2 = 0;
+let j1 = 0;
+let j2 = 0;
+let j3 = 0;
 
 // Scoring logic.
-$(".rollInput").change(function() {
-    // Set variable for each ball where A/B/C refers to the frame #, and 1/2 refers to the ball #.
-    const a1 = parseInt($("#a1").val());
-    const a2 = parseInt($("#a2").val());
-    const b1 = parseInt($("#b1").val());
-    const b2 = parseInt($("#b2").val());
-    const c1 = parseInt($("#c1").val());
-    const c2 = parseInt($("#c2").val());
-    const d1 = parseInt($("#d1").val());
-    const d2 = parseInt($("#d2").val());
-    const e1 = parseInt($("#e1").val());
-    const e2 = parseInt($("#e2").val());
-    const f1 = parseInt($("#f1").val());
-    const f2 = parseInt($("#f2").val());
-    const g1 = parseInt($("#g1").val());
-    const g2 = parseInt($("#g2").val());
-    const h1 = parseInt($("#h1").val());
-    const h2 = parseInt($("#h2").val());
-    const i1 = parseInt($("#i1").val());
-    const i2 = parseInt($("#i2").val());
-    const j1 = parseInt($("#j1").val());
-    const j2 = parseInt($("#j2").val());
-    const j3 = parseInt($("#j3").val());
+// Note: must use .on approach so this run after the other pin functions in main.js
+$('body').on("click", ".pin", function() {
 
     // Calculate result of frame one. Consider strikes & spares.
     function calcFrameOne() {
@@ -330,6 +277,16 @@ $(".rollInput").change(function() {
       }
     }
 
+    // Update scores after any pin change
+    $("#a1-input").html(a1);
+    $("#a2-input").html(a2);
+    $("#b1-input").html(b1);
+    $("#b2-input").html(b2);
+    $("#c1-input").html(c1);
+    $("#c2-input").html(c2);
+    $("#d1-input").html(d1);
+    $("#d2-input").html(d2);
+
     // Print results to page.
     $("#frameOneScore").html(frameOneScore);
     $("#frameTwoScore").html(frameTwoScore);
@@ -348,38 +305,11 @@ $(".rollInput").change(function() {
 
 
 
-// When user clicks the button
-$('.pin').click(function() {
-  // Toggle .bouncing on the .box
-  $(this).toggleClass('ss-target');
-  $(this).toggleClass('ss-record'); 
-  $(this).toggleClass('down'); 
-  $(this).toggleClass('up');
-});
 
 
 
-// Make the prev/next buttons progress through inputs
-$(function(){
-  //Focus on first input field
-  $(".rollInput:first").focus();
-  var currentFocusedInput = $(".rollInput:first");
-  // Next button shifts focus to next field
-  $("#nextBtn").click(function(){
-     var nextInputToFocus = currentFocusedInput.next('.rollInput');
-     if($(nextInputToFocus).length > 0)
-      {
-        currentFocusedInput = $(nextInputToFocus);
-      }
-      $(currentFocusedInput).focus();
-  });
-  // Prev button shifts focus to prev field
-  $("#prevBtn").click(function(){
-     var prevInputToFocus = currentFocusedInput.prev('.rollInput');
-     if($(prevInputToFocus).length > 0)
-      {
-        currentFocusedInput = $(prevInputToFocus);
-      }
-      $(currentFocusedInput).focus();
-  });
-});
+
+
+
+
+
