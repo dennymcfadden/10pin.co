@@ -29,7 +29,7 @@ let j3 = null;
  */
 
 // Note: must use .on approach so this runs after the other pin functions in main.js
-$('body').on("click", ".pin", function updateInputs() {
+$('body').on("click", ".pin, #gutterBtn", function updateInputs() {
   $("#a1-input").html(a1);
   $("#a2-input").html(a2);
   $("#b1-input").html(b1);
@@ -61,12 +61,12 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
   // Calculate result of frame one. Consider strikes & spares.
   function calcFrameOne() {
     if (a1 === 10 && b1 === 10 && c1) {
-      return a1 + b1 + c1;
+      return a1 !== null + b1 !== null + c1 !== null;
     } else if (a1 === 10 && b1 && b2) {
       return a1 + b1 + b2;
-    } else if (a1 && a2 && a1 + a2 === 10 && b1) {
+    } else if (a1 !== null && a2 !== null && a1 + a2 === 10 && b1) {
       return a1 + a2 + b1;
-    } else if (a1 && a2 && a1 + a2 < 10) {
+    } else if (a1 !== null && a2 !== null && a1 + a2 < 10) {
       return a1 + a2;
     } else {
       return null;
@@ -297,7 +297,7 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
       return 300;
     }
   }
-  // Print results to page.
+
   $("#frameOneScore").html(frameOneScore);
   $("#frameTwoScore").html(frameTwoScore);
   $("#frameThreeScore").html(frameThreeScore);

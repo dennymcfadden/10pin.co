@@ -18,15 +18,36 @@
 </head>
 
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gutter ball?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Did you do a uh-oh?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No way</button>
+          <button id="gutterBtn" type="button" class="btn btn-primary" data-dismiss="modal">Mark it zero, Donnie!</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Nav bar -->
   <nav class="text-center p-3">
       <div class="row">
         <div class="col-2 text-left">
         </div>
         <div class="col-8 text-center">
-          <h6 style="margin-top: 0;"><span id="currentFrame"  style="color: #FFF"></span> &#8212 <span id="currentBall"></span></h6>
+          <h6 style="margin-top: 0;"><span id="currentFrame" style="color: #FFF"></span> &#8212 <span id="currentBall"></span></h6>
         </div>
         <div class="col-2 text-right">
+          <img src="images/gutterguy.png" style="height: 18px;" data-toggle="modal" data-target="#exampleModal">
         </div>
       </div>
   </nav>
@@ -135,7 +156,7 @@
   <!-- Pinsets -->
   <div style="position: relative">
     <!-- Pinset1 -->
-    <div id="pinset1" class="pinset container pt-3 animated invisible">
+    <div id="pinset1" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -176,7 +197,7 @@
       </div>
     </div>
     <!-- Pinset2 -->
-    <div id="pinset2" class="pinset container pt-3 animated invisible">
+    <div id="pinset2" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -217,7 +238,7 @@
       </div>
     </div>
     <!-- Pinset3 -->
-    <div id="pinset3" class="pinset container pt-3 animated invisible">
+    <div id="pinset3" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -258,7 +279,7 @@
       </div>
     </div>
     <!-- Pinset4 -->
-    <div id="pinset4" class="pinset container pt-3 animated invisible">
+    <div id="pinset4" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -299,7 +320,7 @@
       </div>
     </div>
     <!-- Pinset5 -->
-    <div id="pinset5" class="pinset container pt-3 animated invisible">
+    <div id="pinset5" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -340,7 +361,7 @@
       </div>
     </div>
     <!-- Pinset6 -->
-    <div id="pinset6" class="pinset container pt-3 animated invisible">
+    <div id="pinset6" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -381,7 +402,7 @@
       </div>
     </div>
     <!-- Pinset7 -->
-    <div id="pinset7" class="pinset container pt-3 animated invisible">
+    <div id="pinset7" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -422,7 +443,7 @@
       </div>
     </div>
     <!-- Pinset8 -->
-    <div id="pinset8" class="pinset container pt-3 animated invisible">
+    <div id="pinset8" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -463,7 +484,7 @@
       </div>
     </div>
     <!-- Pinset9 -->
-    <div id="pinset9" class="pinset container pt-3 animated invisible">
+    <div id="pinset9" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -504,7 +525,7 @@
       </div>
     </div>
     <!-- Pinset10 -->
-    <div id="pinset10" class="pinset container pt-3 animated invisible">
+    <div id="pinset10" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -545,7 +566,7 @@
       </div>
     </div>
     <!-- Pinset11 -->
-    <div id="pinset11" class="pinset container pt-3 animated invisible">
+    <div id="pinset11" class="pinset container-fluid pt-3 invisible">
       <div class="row text-center justify-content-center align-items-center">
         <div class="col-2">
           <img src="images/pin.png" class="pin">
@@ -586,12 +607,6 @@
       </div>
     </div>
   </div>
-  <!-- GutterBall Btn -->
-  <!--   <div class="row no-gutters">
-    <div class="col-12 text-left">
-      <button id="gutterBall" type="button">Gutter Ball</button>
-    </div>
-  </div> -->
   <!-- Total Score -->
   <div class="row no-gutters total-score">
     <div class="col-6 text-left">
@@ -606,10 +621,10 @@
   <!-- Frame Changer -->
   <div class="row no-gutters">
     <div class="col-6 frame-change" id="prevBtn" value="focus prev">
-      <h1 style="color: #FFF;"><i class="ss-icon">navigateleft</i></h1>  
+      <h3><i class="ss-icon">navigateleft</i></h3>  
     </div>
     <div class="col-6 offset-6 frame-change" id="nextBtn" value="focus next">
-      <h1 style="color: #FFF;"><i class="ss-icon">navigateright</i></h1>  
+      <h3><i class="ss-icon">navigateright</i></h3>  
     </div>
   </div>
   <!-- jQuery -->
@@ -623,5 +638,6 @@
   <script src="js/score_logic.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/scrollintoview.js"></script>
 </body>
 </html>

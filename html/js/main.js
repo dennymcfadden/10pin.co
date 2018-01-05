@@ -15,51 +15,50 @@ $(document).ready(function startGame() {
 });
 
 /**
- * Store the ID of the active input in a variable
- */
-
-let activeID = '';
-
-// Get the #ID of .input-active
-$("#nextBtn, #prevBtn").click(function getActiveID() {
-  activeID = $('.input-active').attr('id');
-});
-
-/**
  * The following functions listen for clicks on prevBtn & nextBtn and moves the .input-active & .frame-acive classes accordingly.
  */
 
-// Frame Changer - Next
-$("#nextBtn").click(function nextFrame() {
-  if ($('.input-active').hasClass('ball2')) {
-    // If ball2 has input-active, then make next pinset visible
-    $(".pinset.visible").removeClass("visible").addClass('invisible').next().removeClass("invisible").addClass('visible');
-    // If ball2 has input-active, then switch .fame-active to next frame
-    $(".frame.frame-active").removeClass("frame-active").next().addClass('frame-active');  
-  }
-});
-
-// Frame Changer - Prev
-$("#prevBtn").click(function prevFrame() {
-  if ($('.input-active').hasClass('ball1')) {
-    // If ball1 has input-active, then make previous pinset visible
-    $(".pinset.visible").removeClass("visible").addClass('invisible').prev().removeClass("invisible").addClass('visible');
-    // If ball1 has input-active, then switch .fame-active to prev frame
-    $(".frame.frame-active").removeClass("frame-active").prev().addClass('frame-active');  
-  }
-});
-
-// Input Changer - Next
 $("#nextBtn").click(function nextInput() {
-  $(".rollInput.input-active").removeClass("input-active").next().addClass('input-active');
+  if ($('.input-active').is('#j3')) {
+    // If on the last input of the game, don't allow next
+  }
+  else if ($('.input-active').hasClass('ball2')) {
+    // Make next pinset visible
+    $(".pinset.visible").toggleClass("visible invisible").next().toggleClass("visible invisible");
+    // Move .fame-active to next frame
+    $(".frame.frame-active").removeClass("frame-active").next().addClass('frame-active');
+    // Move .input-active to next input
+    $(".rollInput.input-active").removeClass("input-active").next().addClass('input-active');
+    $(".rollInput.input-active").next().next().next().scrollintoview();
+  }
+  else {
+    // Otherwise, only move .input-active
+    $(".rollInput.input-active").removeClass("input-active").next().addClass('input-active');
+    $(".rollInput.input-active").next().next().next().scrollintoview();
+  }
 });
 
-// Input Changer - Prev
 $("#prevBtn").click(function prevInput() {
-  $(".rollInput.input-active").removeClass("input-active").prev().addClass('input-active');
+  if ($('.input-active').is('#a1')) {
+    // If on the first input of the game, don't allow previous
+  }
+  else if ($('.input-active').hasClass('ball1')) {
+    // Make previous pinset visible
+    $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
+    // Move .fame-active to prev frame
+    $(".frame.frame-active").removeClass("frame-active").prev().addClass('frame-active'); 
+    // Move .input-active to prev input 
+    $(".rollInput.input-active").removeClass("input-active").prev().addClass('input-active');
+    $(".rollInput.input-active").prev().prev().prev().scrollintoview();
+  }
+  else {
+    // Otherwise, only move .input-active 
+    $(".rollInput.input-active").removeClass("input-active").prev().addClass('input-active');
+    $(".rollInput.input-active").prev().prev().prev().scrollintoview();
+  }
 });
 
-// Active state on unused ball input
+// Move active state on unused ball input
 $("#nextBtn, #prevBtn").click(function setInputState() {
   if ($('.input-active').hasClass('ball1')) {
     $(".rollInput.frame-active").removeClass("frame-active"); 
@@ -146,8 +145,8 @@ $('#nextBtn, #prevBtn').click(function printCurrentFrame() {
  */
 
 $('body').on("click", ".pin", function clickPin() {
-  $(this).toggleClass('animated bounceIn');
-  $(this).parent().toggleClass('down');
+  $(this).toggleClass('animated bounceIn down');
+  // $(this).parent().toggleClass('down');
 });
 
 /**
@@ -247,49 +246,53 @@ $('body').on("click", ".down", function subtractPin() {
  }
 });
 
-//When gutterBall button is clicked, set active input to 0
-// $("#gutterBall").click(function gutterBall() {
-//  if ($("#a1").hasClass('input-active')) {
-//    a1 = 0;
-//  } else if ($("#a2").hasClass('input-active')) {
-//    a2 = 0;
-//  } else if ($("#b1").hasClass('input-active')) {
-//    b1 = 0;
-//  } else if ($("#b2").hasClass('input-active')) {
-//    b2 = 0;
-//  } else if ($("#c1").hasClass('input-active')) {
-//    c1 = 0;
-//  } else if ($("#c2").hasClass('input-active')) {
-//    c2 = 0;
-//  } else if ($("#d1").hasClass('input-active')) {
-//    d1 = 0;
-//  } else if ($("#d2").hasClass('input-active')) {
-//    d2 = 0;
-//  } else if ($("#e1").hasClass('input-active')) {
-//    e1 = 0;
-//  } else if ($("#e2").hasClass('input-active')) {
-//    e2 = 0;
-//  } else if ($("#f1").hasClass('input-active')) {
-//    f1 = 0;
-//  } else if ($("#f2").hasClass('input-active')) {
-//    f2 = 0;
-//  } else if ($("#g1").hasClass('input-active')) {
-//    g1 = 0;
-//  } else if ($("#g2").hasClass('input-active')) {
-//    g2 = 0;
-//  } else if ($("#h1").hasClass('input-active')) {
-//    h1 = 0;
-//  } else if ($("#h2").hasClass('input-active')) {
-//    h2 = 0;
-//  } else if ($("#i1").hasClass('input-active')) {
-//    i1 = 0;
-//  } else if ($("#i2").hasClass('input-active')) {
-//    i2 = 0;
-//  } else if ($("#j1").hasClass('input-active')) {
-//    j1 = 0;
-//  } else if ($("#j2").hasClass('input-active')) {
-//    j2 = 0;
-//  } else if ($("#j3").hasClass('input-active')) {
-//    j3 = 0;
-//  }
+// $("#gutterBtn").click(function gutterBall() {
+//  alert ('fail');
 // });
+
+//When gutterBtn is clicked, set active input to 0
+$("#gutterBtn").click(function gutterBall() {
+ if ($("#a1").hasClass('input-active')) {
+   a1 = 0;
+ } else if ($("#a2").hasClass('input-active')) {
+   a2 = 0;
+ } else if ($("#b1").hasClass('input-active')) {
+   b1 = 0;
+ } else if ($("#b2").hasClass('input-active')) {
+   b2 = 0;
+ } else if ($("#c1").hasClass('input-active')) {
+   c1 = 0;
+ } else if ($("#c2").hasClass('input-active')) {
+   c2 = 0;
+ } else if ($("#d1").hasClass('input-active')) {
+   d1 = 0;
+ } else if ($("#d2").hasClass('input-active')) {
+   d2 = 0;
+ } else if ($("#e1").hasClass('input-active')) {
+   e1 = 0;
+ } else if ($("#e2").hasClass('input-active')) {
+   e2 = 0;
+ } else if ($("#f1").hasClass('input-active')) {
+   f1 = 0;
+ } else if ($("#f2").hasClass('input-active')) {
+   f2 = 0;
+ } else if ($("#g1").hasClass('input-active')) {
+   g1 = 0;
+ } else if ($("#g2").hasClass('input-active')) {
+   g2 = 0;
+ } else if ($("#h1").hasClass('input-active')) {
+   h1 = 0;
+ } else if ($("#h2").hasClass('input-active')) {
+   h2 = 0;
+ } else if ($("#i1").hasClass('input-active')) {
+   i1 = 0;
+ } else if ($("#i2").hasClass('input-active')) {
+   i2 = 0;
+ } else if ($("#j1").hasClass('input-active')) {
+   j1 = 0;
+ } else if ($("#j2").hasClass('input-active')) {
+   j2 = 0;
+ } else if ($("#j3").hasClass('input-active')) {
+   j3 = 0;
+ }
+});

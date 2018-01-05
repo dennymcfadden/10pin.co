@@ -22,7 +22,7 @@ nav .submit {
 /* ------------ Pins ------------ */
 
 .pin {
-  height: 80px;
+  height: 70px;
 }
 
 .up {
@@ -77,21 +77,18 @@ nav .submit {
 .total-score {
   position: fixed;
   width: 100%;
-  bottom: 100;
+  bottom: 70;
   padding: 0 1.5rem 0 1.5rem;
 }
 
 .frame-change {
   bottom: 0;
   background: var(--gold-2);
-  height: 100px;
-  padding-top: 1.8rem;
+  height: 70px;
+  padding-top: 1.2rem;
   position: fixed;
   text-align: center;
-}
-
-.frame-change:hover {
-  background: var(--gold-1);
+  color: #fff;
 }
 
 .bgContainer{
