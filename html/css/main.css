@@ -91,10 +91,55 @@ nav .submit {
   color: #fff;
 }
 
+.startBtn {
+  bottom: 0;
+  background: var(--red-1);
+  height: 120px;
+  padding-top: 2.5rem;
+  position: fixed;
+  text-align: center;
+  color: #fff;
+}
+
+.bgStart {
+  top: 0;
+  background: var(--navy);
+  height: 100%;
+  position: fixed;
+  text-align: center;
+}
+
 .bgContainer{
   width:50%;
   height:500px;
   background-color: var(--black);
   position: relative;
   overflow: hidden;
+}
+
+.logo{
+  color: var(--white);
+  font-size: 10rem;
+  padding-top: 10rem;
+}
+
+.dot1{
+  color: var(--white);
+}
+
+.dot2{
+  color: var(--blue);
+}
+
+.dot2{
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .dot1{
+    line-height: 2.5;
+  }
+  .dot2{
+    line-height: 2.5;
+  }
 }

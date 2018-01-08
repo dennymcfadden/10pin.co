@@ -55,17 +55,31 @@
 }
 
 @keyframes flash {
-  from, 50%, to {
+  from, to {
     opacity: 1;
   }
 
-  25%, 75% {
-    opacity: 0;
+  50% {
+    opacity: .5;
   }
 }
 
 .flash {
   animation-name: flash;
+}
+
+@keyframes flash-delay {
+  from, to {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.flash-delay {
+  animation-name: flash-delay;
 }
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */

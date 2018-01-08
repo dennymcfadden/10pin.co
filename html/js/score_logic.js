@@ -310,6 +310,8 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
   $("#frameTenScore").html(frameTenScore);
   $("#currentScore").html(currentScore);
   $("#maxScore").html(maxScore);
+
+
 });
 
 
