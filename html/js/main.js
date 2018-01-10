@@ -73,6 +73,32 @@ $("#nextBtn, #prevBtn").click(function setInputState() {
  * The following function prints the current frame to the nav bar. 
  */
 
+//  function getCapital(state) {
+//   switch (state) {
+//     case 'NY':
+//         console.log('Albany');
+//         break;
+//     case 'MD':
+//         console.log('Annapolis');
+//         break;
+//     default:
+//         console.log('');
+//   }
+// }
+
+// $('#nextBtn, #prevBtn').click(function printCurrentFrame() {
+//  switch(expression) {
+//     case n:
+//         code block
+//         break;
+//     case n:
+//         code block
+//         break;
+//     default:
+//         code block
+//  }
+// });
+
 $('#nextBtn, #prevBtn').click(function printCurrentFrame() {
   if ($("#a1").hasClass('input-active')) {
     $("#currentFrame").html('Frame 1');
