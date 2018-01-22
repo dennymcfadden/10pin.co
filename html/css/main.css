@@ -50,6 +50,9 @@ nav .submit {
 }
 
 .ball {
+  -ms-flex: 0 0 10.5%;
+      flex: 0 0 10.5%;
+  max-width: 10.5%;
   border-bottom: 1px solid var(--gray-2);
   border-right: 1px solid var(--gray-2);
   background-color: var(--gray-1);
@@ -57,11 +60,18 @@ nav .submit {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .ball {
+  -ms-flex: 0 0 4.7619%;
+      flex: 0 0 4.7619%;
+  max-width: 4.7619%;
+  }
+}
+
 .ball1 {
 }
 
 .ball2 {
-  border-left: 1px solid var(--gray-2);
 }
 
 .input-active {

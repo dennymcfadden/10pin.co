@@ -126,12 +126,6 @@ html {
   max-width: 21%;
 }
 
-.col-ball {
-  -ms-flex: 0 0 10.5%;
-      flex: 0 0 10.5%;
-  max-width: 10.5%;
-}
-
 .col-frame10 {
   -ms-flex: 0 0 31.5%;
       flex: 0 0 31.5%;
@@ -145,12 +139,6 @@ html {
   -ms-flex: 0 0 9.5238%;
       flex: 0 0 9.5238%;
   max-width: 9.5238%;
-}
-
-.col-ball {
-  -ms-flex: 0 0 4.7619%;
-      flex: 0 0 4.7619%;
-  max-width: 4.7619%;
 }
 
 .col-frame10 {
