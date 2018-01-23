@@ -312,7 +312,7 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
 });
 
 /**
- * Update for any strikes & spares.
+ * Update with 'X' & '/' for any strikes & spares.
  */
 
 $('body').on("click", ".pin, #gutterBtn", function frameOneStrikesSpares() {
@@ -396,14 +396,24 @@ $('body').on("click", ".pin, #gutterBtn", function frameNineStrikesSpares() {
     } 
 });
 
-// $('body').on("click", ".pin, #gutterBtn", function frameTenStrikesSpares() {
-//     if (j1 === 10) {
-//       $("#j2-score").html('X');
-//     } else if (j1 + j2 === 10) {
-//       $("#j2-score").html('/');
-//     } 
-// });
-
-
-
-
+$('body').on("click", ".pin, #gutterBtn", function frameTenStrikesSpares() {
+    if (j1 === 10 && j2 === 10 && j3 === 10) {
+      $("#j1-score").html('X');
+      $("#j2-score").html('X');
+      $("#j3-score").html('X');
+    } else if (j3 === 10 && j1 === 10) {
+      $("#j1-score").html('X');
+      $("#j2-score").html('-');
+      $("#j3-score").html('X');
+    } else if (j3 === 10 && j1 + j2 === 10) {
+      $("#j2-score").html('/');
+      $("#j3-score").html('X');
+    } else if (j1 === 10 && j2 === 10) {
+      $("#j1-score").html('X');
+      $("#j2-score").html('X');
+    } else if (j1 === 10) {
+      $("#j1-score").html('X');
+    } else if (j1 + j2 === 10) {
+      $("#j2-score").html('/');
+    }
+});

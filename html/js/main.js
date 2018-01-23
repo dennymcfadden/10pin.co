@@ -27,31 +27,25 @@ $("#prevBtn").click(function prevPinset() {
 $("#nextBtn").click(function nextInput10thFrame() {
   if (j1 === 10 && $('.input-active').is('#j1')) {
     $(".pinset.visible").toggleClass("visible invisible").next().toggleClass("visible invisible");
-    // alert ('test');
   } else if (j2 === 10 && $('.input-active').is('#j2')) {
     $(".pinset.visible").toggleClass("visible invisible").next().toggleClass("visible invisible");
-    // alert ('test 2');
   } else if (j1 + j2 === 10 && $('.input-active').is('#j2')) {
     $(".pinset.visible").toggleClass("visible invisible").next().toggleClass("visible invisible");
-    // alert ('test 3');
   }
 });
 
 $("#prevBtn").click(function prevInput10thFrame() {
   if (j1 === 10 && $('.input-active').is('#j2')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    // alert ('test');
   } else if (j2 === 10 && $('.input-active').is('#j3')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    // alert ('test 2');
   } else if (j1 + j2 === 10 && $('.input-active').is('#j3')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    // alert ('test 3');
   }
 });
 
 /**
- * Move input-active
+ * Move input-active class
  */
 
 $("#nextBtn").click(function moveInputActiveNext() {
@@ -86,28 +80,36 @@ $('#nextBtn, #prevBtn').click(function printStatus() {
   $('#currentBall').html('Ball ' + currentBall);
 });
 
-// Move active state on unused ball input
-$("#nextBtn, #prevBtn").click(function setInputState() {
-  if ($('.input-active').hasClass('ball1') && $('.input-active').not('#j1, #j2, #j3')) {
+/**
+ * Move frame-active class to the unused ball
+ */
+
+$("#nextBtn, #prevBtn").click(function setFrameActive() {
+  if ($('.input-active').hasClass('ball1')) {
     $(".rollInput.frame-active").removeClass("frame-active"); 
     $(".input-active").next().addClass("frame-active"); 
-  } else if ($('.input-active').hasClass('ball2') && $('.input-active').not('#j1, #j2, #j3')) {
+  } else if ($('.input-active').hasClass('ball2')) {
     $(".rollInput.frame-active").removeClass("frame-active"); 
     $(".input-active").prev().addClass("frame-active"); 
   }
 });
 
-// Move active state in 10th frame
-$("#nextBtn, #prevBtn").click(function setInputState10thFrame() {
-  if ($('.input-active').is('#j1')) {
-    $(".rollInput.frame-active").removeClass("frame-active"); 
-    $("#j2").addClass("frame-active"); 
-  } else if ($('.input-active').is('#j2')) {
-    $(".rollInput.frame-active").removeClass("frame-active"); 
-    $("#j1").addClass("frame-active"); 
-  } else if ($('.input-active').is('#j3')) {
-    $(".rollInput.frame-active").removeClass("frame-active"); 
+/**
+ * Special frame-active rules for 10th frame
+ */
+
+$("#nextBtn, #prevBtn").click(function setFrameActive10thFrame() {
+  if ($('.input-active').is('#j3')) {
+    $("#j3").removeClass("frame-active");
     $("#j1, #j2").addClass("frame-active"); 
+  } else if ($('.input-active').is('#j2')) {
+    $("#j2").removeClass("frame-active"); 
+    $("#j1").addClass("frame-active");
+  } else if ($('.input-active').is('#j1')) {
+    $("#j1").removeClass("frame-active"); 
+    $("#j2").addClass("frame-active"); 
+  } else if ($('.input-active').is('#i2')) {
+    $("#j3").removeClass("frame-active"); 
   }
 });
 
@@ -120,7 +122,7 @@ $('body').on("click", ".pin", function clickPin() {
 });
 
 /**
- * The following two functions add / subtract pins from whichever rollInput currently has .input-active 
+ * Add pin to whichever input currently has .input-active 
  */
 
 $('body').on("click", ".pin:not('.down')", function addPin() {
@@ -169,7 +171,10 @@ $('body').on("click", ".pin:not('.down')", function addPin() {
  }
 });
 
-// When pin is picked up, -1 from active input
+/**
+ * Subtract pin from whichever input currently has .input-active 
+ */
+
 $('body').on("click", ".down", function subtractPin() {
  if ($("#a1").hasClass('input-active')) {
    a1 = a1 - 1;
@@ -216,7 +221,10 @@ $('body').on("click", ".down", function subtractPin() {
  }
 });
 
-//When gutterBtn is clicked, set active input to 0
+/**
+ * When gutterball is clicked, set .active-input to 0 
+ */
+
 $("#gutterBtn").click(function gutterBall() {
  if ($("#a1").hasClass('input-active')) {
    a1 = 0;
@@ -263,14 +271,16 @@ $("#gutterBtn").click(function gutterBall() {
  }
 });
 
-// Add bonus ball
-$('body').on("click", ".pin, #gutterBtn", function addBonusBall() {
-  if ($('.input-active').is('#j3')) {
-  } else if (j1 + j2 < 10) {
+/**
+ * Determine if bonus ball is earned
+ */
+
+$('body').on("click", ".pin, #gutterBtn, #nextBtn, #prevBtn", function addBonusBall() {
+  if ($('.input-active').is('#j1, #j2') && j1 + j2 < 10) {
     $("#j3").removeClass("frame-active"); 
-  } else if (j1 === 10) {
+  } else if ($('.input-active').is('#j1, #j2') && j1 === 10) {
     $("#j3").addClass("frame-active");
-  } else if (j1 + j2 === 10) {
+  } else if ($('.input-active').is('#j1, #j2') && j1 + j2 === 10) {
     $("#j3").addClass("frame-active");
   }
 });
