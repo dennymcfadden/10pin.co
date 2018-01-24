@@ -28,7 +28,7 @@ let j3 = null;
  * Print value of variables whenever a pin is clicked
  */
 
-$('body').on("click", ".pin, #gutterBtn", function updateInputs() {
+$('body').on("click", ".pin, #gutterBtn", function() {
   $("#a1-score").html(a1);
   $("#a2-score").html(a2);
   $("#b1-score").html(b1);
@@ -56,7 +56,7 @@ $('body').on("click", ".pin, #gutterBtn", function updateInputs() {
  * Calculate frame scores whenever prevBtn or nextBtn is clicked
  */
 
-$("#nextBtn, #prevBtn").click(function calcAllScores() {
+$("#nextBtn, #prevBtn, #finishBtn").click(function() {
   // Calculate result of frame one. Consider strikes & spares.
   function calcFrameOne() {
     if (a1 === 10 && b1 === 10 && c1 !== null) {
@@ -307,7 +307,7 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
   $("#frameEightScore").html(frameEightScore);
   $("#frameNineScore").html(frameNineScore);
   $("#frameTenScore").html(frameTenScore);
-  $("#currentScore").html(currentScore);
+  $(".currentScore").html(currentScore);
   $("#maxScore").html(maxScore);
 });
 
@@ -315,7 +315,7 @@ $("#nextBtn, #prevBtn").click(function calcAllScores() {
  * Update with 'X' & '/' for any strikes & spares.
  */
 
-$('body').on("click", ".pin, #gutterBtn", function frameOneStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (a1 === 10) {
       $("#a1-score").html('X');
       $("#a2-score").html('-');
@@ -324,7 +324,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameOneStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameTwoStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (b1 === 10) {
       $("#b1-score").html('X');
       $("#b2-score").html('-');
@@ -333,7 +333,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameTwoStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameThreeStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (c1 === 10) {
       $("#c1-score").html('X');
       $("#c2-score").html('-');
@@ -342,7 +342,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameThreeStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameFourStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (d1 === 10) {
       $("#d1-score").html('X');
       $("#d2-score").html('-');
@@ -351,7 +351,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameFourStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameFiveStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (e1 === 10) {
       $("#e1-score").html('X');
       $("#e2-score").html('-');
@@ -360,7 +360,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameFiveStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameSixStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (f1 === 10) {
       $("#f1-score").html('X');
       $("#f2-score").html('-');
@@ -369,7 +369,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameSixStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameSevenStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (g1 === 10) {
       $("#g1-score").html('X');
       $("#g2-score").html('-');
@@ -378,7 +378,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameSevenStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameEightStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (h1 === 10) {
       $("#h1-score").html('X');
       $("#h2-score").html('-');
@@ -387,7 +387,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameEightStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameNineStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (i1 === 10) {
       $("#i1-score").html('X');
       $("#i2-score").html('-');
@@ -396,7 +396,7 @@ $('body').on("click", ".pin, #gutterBtn", function frameNineStrikesSpares() {
     } 
 });
 
-$('body').on("click", ".pin, #gutterBtn", function frameTenStrikesSpares() {
+$('body').on("click", ".pin, #gutterBtn", function() {
     if (j1 === 10 && j2 === 10 && j3 === 10) {
       $("#j1-score").html('X');
       $("#j2-score").html('X');

@@ -13,6 +13,7 @@
   --gray-2: #E6E8EA;
   --red-1: #F22A38;
   --red-2: #F22A38;
+  --green: #2BBF54;
   --white: #FFF;
   --black: #212529;
   --breakpoint-xs: 0;
@@ -5122,7 +5123,7 @@ button.close {
   position: relative;
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
-  padding: 15px;
+  padding: 50% 15px;
   text-align: center;
 }
 
@@ -5155,8 +5156,11 @@ button.close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
-    margin: 30px auto;
+    /*  max-width: 500px; */  
+    /*  margin: 30px auto; */
+  }
+  .modal-body{
+    padding: 30% 15px;
   }
   .modal-sm {
     max-width: 300px;
@@ -5166,6 +5170,9 @@ button.close {
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 800px;
+  }
+  .modal-body{
+    padding: 20% 15px;
   }
 }
 
