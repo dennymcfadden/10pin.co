@@ -36,7 +36,7 @@
     </div>
   </div>
   <!-- Finish Modal -->
-  <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="gutterballModal" aria-hidden="true">
+  <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content" style="background-color: var(--green)">
         <div class="modal-body">
@@ -62,13 +62,13 @@
   <nav class="text-center p-3">
       <div class="row">
         <div class="col-3 text-left">
-          <h6 style="margin-top: 0;" data-toggle="modal" data-target="#gutterballModal">Gutterball</h6>
+          <h6 id="gutterBallBtn" style="margin-top: 0;" data-toggle="modal" data-target="#gutterballModal">Gutterball</h6>
         </div>
         <div class="col-6 text-center">
           <h6 style="margin-top: 0; color: #FFF"><span id="currentFrame">Frame 1</span> &#8212 <span id="currentBall">Ball 1</span></h6>
         </div>
         <div class="col-3 text-right">
-          <h6 id="finishBtn" style="margin-top: 0; color: #18466f;" data-toggle="modal" data-target="#finishModal">Game Over</h6>
+          <h6 id="finishBtn" style="margin-top: 0; color: #18466f;" data-toggle="modal" data-target="#finishModal">Finished</h6>
         </div>
       </div>
   </nav>
@@ -136,7 +136,7 @@
       <div id="j2" class="ball rollInput" data-frame="10" data-ball="2">
         <h6><span id="j2-score"></span></h6>
       </div>
-      <div id="j3" class="ball rollInput" data-frame="10" data-ball="Bonus!">
+      <div id="j3" class="ball rollInput" data-frame="10" data-ball="3">
         <h6><span id="j3-score"></span></h6>
       </div>
     </div>
