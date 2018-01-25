@@ -14,6 +14,15 @@ $(document).ready(function(){
   numberBall = activeInput.data('ball');
 });
 
+$("#gutterBallBtn").click(function() {
+  alert ('gutter ball');
+});
+
+$("#finishBtn").click(function() {
+  alert ('finished');
+});
+
+
 /**
  * Toggle visibility of pinset when switching frames, and update variable
  */
