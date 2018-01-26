@@ -2,6 +2,7 @@
  * Set variables for each ball
  */
 
+// let a1 = parseInt('#a1');
 let a1 = null;
 let a2 = null;
 let b1 = null;

@@ -149,6 +149,11 @@ $('body').on("click", ".pin", function() {
  * Add pin to whichever input currently has .input-active 
  */
 
+    // $('body').on("click", ".pin:not('.down')", function() {
+    //  let num = activeInput.text();
+    // $("input-active").html(num + 1);
+    // });
+
 $('body').on("click", ".pin:not('.down')", function() {
  if ($(activeInput).is('#a1')) {
    a1 = a1 + 1;
