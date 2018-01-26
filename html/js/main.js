@@ -110,10 +110,10 @@ $('#nextBtn, #prevBtn').click(function() {
 
 $("#nextBtn, #prevBtn").click(function() {
   if ($(activeInput).hasClass('ball1')) {
-    $(".rollInput.frame-active").removeClass("frame-active"); 
+    $(".ball.frame-active").removeClass("frame-active"); 
     $(activeInput).next().addClass("frame-active"); 
   } else if ($(activeInput).hasClass('ball2')) {
-    $(".rollInput.frame-active").removeClass("frame-active"); 
+    $(".ball.frame-active").removeClass("frame-active"); 
     $(activeInput).prev().addClass("frame-active"); 
   }
 });

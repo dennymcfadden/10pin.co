@@ -316,85 +316,21 @@ $("#nextBtn, #prevBtn, #finishBtn").click(function() {
  */
 
 $('body').on("click", ".pin, #gutterBtn", function() {
-    if (a1 === 10) {
-      $("#a1").html('X');
-      $("#a2").html('-');
-    } else if (a1 + a2 === 10) {
-      $("#a2").html('/');
-    } 
+  $(".ball1").not('#j1').each(function(index, element) {
+    let num1 = $(element).text();
+    let num2 = $(element).next().text();
+    if ($(element) && num1 === '10') {
+      $(element).html('X')
+      $(element).next().html('-')
+    } else if ($(element) && parseInt(num1) + parseInt(num2) === 10) {
+      $(element).next().html('/')
+    }
+  });
 });
 
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (b1 === 10) {
-      $("#b1").html('X');
-      $("#b2").html('-');
-    } else if (b1 + b2 === 10) {
-      $("#b2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (c1 === 10) {
-      $("#c1").html('X');
-      $("#c2").html('-');
-    } else if (c1 + c2 === 10) {
-      $("#c2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (d1 === 10) {
-      $("#d1").html('X');
-      $("#d2").html('-');
-    } else if (d1 + d2 === 10) {
-      $("#d2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (e1 === 10) {
-      $("#e1").html('X');
-      $("#e2").html('-');
-    } else if (e1 + e2 === 10) {
-      $("#e2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (f1 === 10) {
-      $("#f1").html('X');
-      $("#f2").html('-');
-    } else if (f1 + f2 === 10) {
-      $("#f2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (g1 === 10) {
-      $("#g1").html('X');
-      $("#g2").html('-');
-    } else if (g1 + g2 === 10) {
-      $("#g2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (h1 === 10) {
-      $("#h1").html('X');
-      $("#h2").html('-');
-    } else if (h1 + h2 === 10) {
-      $("#h2").html('/');
-    } 
-});
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (i1 === 10) {
-      $("#i1").html('X');
-      $("#i2").html('-');
-    } else if (i1 + i2 === 10) {
-      $("#i2").html('/');
-    } 
-});
+/**
+ * Special rules for 'X' & '/' in 10th frame
+ */
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (j1 === 10 && j2 === 10 && j3 === 10) {
