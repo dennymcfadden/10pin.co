@@ -29,27 +29,27 @@ let j3 = null;
  */
 
 $('body').on("click", ".pin, #gutterBtn", function() {
-  $("#a1-score").html(a1);
-  $("#a2-score").html(a2);
-  $("#b1-score").html(b1);
-  $("#b2-score").html(b2);
-  $("#c1-score").html(c1);
-  $("#c2-score").html(c2);
-  $("#d1-score").html(d1);
-  $("#d2-score").html(d2);
-  $("#e1-score").html(e1);
-  $("#e2-score").html(e2);
-  $("#f1-score").html(f1);
-  $("#f2-score").html(f2);
-  $("#g1-score").html(g1);
-  $("#g2-score").html(g2);
-  $("#h1-score").html(h1);
-  $("#h2-score").html(h2);
-  $("#i1-score").html(i1);
-  $("#i2-score").html(i2);
-  $("#j1-score").html(j1);
-  $("#j2-score").html(j2);
-  $("#j3-score").html(j3);
+  $("#a1").html(a1);
+  $("#a2").html(a2);
+  $("#b1").html(b1);
+  $("#b2").html(b2);
+  $("#c1").html(c1);
+  $("#c2").html(c2);
+  $("#d1").html(d1);
+  $("#d2").html(d2);
+  $("#e1").html(e1);
+  $("#e2").html(e2);
+  $("#f1").html(f1);
+  $("#f2").html(f2);
+  $("#g1").html(g1);
+  $("#g2").html(g2);
+  $("#h1").html(h1);
+  $("#h2").html(h2);
+  $("#i1").html(i1);
+  $("#i2").html(i2);
+  $("#j1").html(j1);
+  $("#j2").html(j2);
+  $("#j3").html(j3);
 });
 
 /**
@@ -317,103 +317,103 @@ $("#nextBtn, #prevBtn, #finishBtn").click(function() {
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (a1 === 10) {
-      $("#a1-score").html('X');
-      $("#a2-score").html('-');
+      $("#a1").html('X');
+      $("#a2").html('-');
     } else if (a1 + a2 === 10) {
-      $("#a2-score").html('/');
+      $("#a2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (b1 === 10) {
-      $("#b1-score").html('X');
-      $("#b2-score").html('-');
+      $("#b1").html('X');
+      $("#b2").html('-');
     } else if (b1 + b2 === 10) {
-      $("#b2-score").html('/');
+      $("#b2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (c1 === 10) {
-      $("#c1-score").html('X');
-      $("#c2-score").html('-');
+      $("#c1").html('X');
+      $("#c2").html('-');
     } else if (c1 + c2 === 10) {
-      $("#c2-score").html('/');
+      $("#c2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (d1 === 10) {
-      $("#d1-score").html('X');
-      $("#d2-score").html('-');
+      $("#d1").html('X');
+      $("#d2").html('-');
     } else if (d1 + d2 === 10) {
-      $("#d2-score").html('/');
+      $("#d2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (e1 === 10) {
-      $("#e1-score").html('X');
-      $("#e2-score").html('-');
+      $("#e1").html('X');
+      $("#e2").html('-');
     } else if (e1 + e2 === 10) {
-      $("#e2-score").html('/');
+      $("#e2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (f1 === 10) {
-      $("#f1-score").html('X');
-      $("#f2-score").html('-');
+      $("#f1").html('X');
+      $("#f2").html('-');
     } else if (f1 + f2 === 10) {
-      $("#f2-score").html('/');
+      $("#f2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (g1 === 10) {
-      $("#g1-score").html('X');
-      $("#g2-score").html('-');
+      $("#g1").html('X');
+      $("#g2").html('-');
     } else if (g1 + g2 === 10) {
-      $("#g2-score").html('/');
+      $("#g2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (h1 === 10) {
-      $("#h1-score").html('X');
-      $("#h2-score").html('-');
+      $("#h1").html('X');
+      $("#h2").html('-');
     } else if (h1 + h2 === 10) {
-      $("#h2-score").html('/');
+      $("#h2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (i1 === 10) {
-      $("#i1-score").html('X');
-      $("#i2-score").html('-');
+      $("#i1").html('X');
+      $("#i2").html('-');
     } else if (i1 + i2 === 10) {
-      $("#i2-score").html('/');
+      $("#i2").html('/');
     } 
 });
 
 $('body').on("click", ".pin, #gutterBtn", function() {
     if (j1 === 10 && j2 === 10 && j3 === 10) {
-      $("#j1-score").html('X');
-      $("#j2-score").html('X');
-      $("#j3-score").html('X');
+      $("#j1").html('X');
+      $("#j2").html('X');
+      $("#j3").html('X');
     } else if (j3 === 10 && j1 === 10) {
-      $("#j1-score").html('X');
-      $("#j2-score").html('-');
-      $("#j3-score").html('X');
+      $("#j1").html('X');
+      $("#j2").html('-');
+      $("#j3").html('X');
     } else if (j3 === 10 && j1 + j2 === 10) {
-      $("#j2-score").html('/');
-      $("#j3-score").html('X');
+      $("#j2").html('/');
+      $("#j3").html('X');
     } else if (j1 === 10 && j2 === 10) {
-      $("#j1-score").html('X');
-      $("#j2-score").html('X');
+      $("#j1").html('X');
+      $("#j2").html('X');
     } else if (j1 === 10) {
-      $("#j1-score").html('X');
+      $("#j1").html('X');
     } else if (j1 + j2 === 10) {
-      $("#j2-score").html('/');
+      $("#j2").html('/');
     }
 });
