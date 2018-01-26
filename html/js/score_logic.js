@@ -297,16 +297,16 @@ $("#nextBtn, #prevBtn, #finishBtn").click(function() {
     }
   }
   // Print frame scores.
-  $("#frameOneScore").html(frameOneScore);
-  $("#frameTwoScore").html(frameTwoScore);
-  $("#frameThreeScore").html(frameThreeScore);
-  $("#frameFourScore").html(frameFourScore);
-  $("#frameFiveScore").html(frameFiveScore);
-  $("#frameSixScore").html(frameSixScore);
-  $("#frameSevenScore").html(frameSevenScore);
-  $("#frameEightScore").html(frameEightScore);
-  $("#frameNineScore").html(frameNineScore);
-  $("#frameTenScore").html(frameTenScore);
+  $("#frameOne").html(frameOneScore);
+  $("#frameTwo").html(frameTwoScore);
+  $("#frameThree").html(frameThreeScore);
+  $("#frameFour").html(frameFourScore);
+  $("#frameFive").html(frameFiveScore);
+  $("#frameSix").html(frameSixScore);
+  $("#frameSeven").html(frameSevenScore);
+  $("#frameEight").html(frameEightScore);
+  $("#frameNine").html(frameNineScore);
+  $("#frameTen").html(frameTenScore);
   $(".currentScore").html(currentScore);
   $("#maxScore").html(maxScore);
 });

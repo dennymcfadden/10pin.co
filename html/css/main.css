@@ -50,6 +50,7 @@ nav .submit {
   background-color: var(--gray-1);
   height: 50px;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .ball {
@@ -70,12 +71,6 @@ nav .submit {
       flex: 0 0 4.7619%;
   max-width: 4.7619%;
   }
-}
-
-.ball1 {
-}
-
-.ball2 {
 }
 
 .input-active {
@@ -105,16 +100,6 @@ nav .submit {
   color: #fff;
 }
 
-.startBtn {
-  bottom: 0;
-  background: var(--red-1);
-  height: 120px;
-  padding-top: 2.5rem;
-  position: fixed;
-  text-align: center;
-  color: #fff;
-}
-
 .bgStart {
   top: 0;
   background: var(--navy);
@@ -129,43 +114,4 @@ nav .submit {
   background-color: var(--black);
   position: relative;
   overflow: hidden;
-}
-
-.logo{
-    color: var(--white);
-    font-size: 4rem;
-    padding-top: 1.25rem;
-    height: 7.5rem;
-    background-color: var(--navy);
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 30%;
-    border-radius: 30px;
-    border: 5px solid var(--white);
-  }
-
-.dot1{
-  color: var(--white);
-}
-
-.dot2{
-  color: var(--blue);
-}
-
-.dot2{
-  font-weight: 700;
-}
-
-@media (min-width: 768px) {
-  .logo{
-    font-size: 6rem;
-    height: 10rem;
-    margin-top: 20%;
-  }
-  .dot1{
-    line-height: 2.5;
-  }
-  .dot2{
-    line-height: 2.5;
-  }
 }
