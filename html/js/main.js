@@ -1,7 +1,5 @@
 let activeInput = undefined;
 let activePins = undefined;
-let numberFrame = undefined;
-let numberBall = undefined;
 
 /**
  * Update global variables on page load
@@ -10,8 +8,6 @@ let numberBall = undefined;
 $(document).ready(function(){
   activeInput = $('.input-active');
   activePins = $(".pinset").not(".invisible");
-  numberFrame = activeInput.data('frame');
-  numberBall = activeInput.data('ball');
 });
 
 /**
@@ -19,7 +15,7 @@ $(document).ready(function(){
  */
 
 $("#nextBtn").click(function() {
-  if ($(activeInput).hasClass('ball2')) {
+  if ($(activeInput).data('ball') === 2) {
     // Make next pinset visible
     $(activePins).toggleClass("invisible").next().toggleClass("invisible");
     // Move .fame-active to next frame
@@ -30,7 +26,7 @@ $("#nextBtn").click(function() {
 
 $("#prevBtn").click(function() {
   if ($(activeInput).is('#a1')) {
-  } else if ($(activeInput).hasClass('ball1')) {
+  } else if ($(activeInput).data('ball') === 1) {
     // Make previous pinset visible
     $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
     // Move .fame-active to prev frame
@@ -100,8 +96,8 @@ $("#prevBtn").click(function() {
  */
 
 $('#nextBtn, #prevBtn').click(function() {
-  $('#currentFrame').html('Frame ' + numberFrame);
-  $('#currentBall').html('Ball ' + numberBall);
+  $('#currentFrame').html('Frame ' + activeInput.data('frame'));
+  $('#currentBall').html('Ball ' + activeInput.data('ball'));
 });
 
 /**
@@ -109,10 +105,10 @@ $('#nextBtn, #prevBtn').click(function() {
  */
 
 $("#nextBtn, #prevBtn").click(function() {
-  if ($(activeInput).hasClass('ball1')) {
+  if ($(activeInput).data('ball') === 1) {
     $(".ball.frame-active").removeClass("frame-active"); 
     $(activeInput).next().addClass("frame-active"); 
-  } else if ($(activeInput).hasClass('ball2')) {
+  } else if ($(activeInput).data('ball') === 2) {
     $(".ball.frame-active").removeClass("frame-active"); 
     $(activeInput).prev().addClass("frame-active"); 
   }

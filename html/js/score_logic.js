@@ -340,7 +340,7 @@ $("#nextBtn, #prevBtn, #finishBtn").click(function() {
  */
 
 $('body').on("click", ".pin, #gutterBtn", function() {
-  $(".ball1").not('#j1').each(function(index, element) {
+  $('#a1, #b1, #c1, #d1, #e1, #f1, #g1, #h1, #i1').each(function(index, element) {
     let num1 = $(element).text();
     let num2 = $(element).next().text();
     if ($(element) && num1 === '10') {
