@@ -144,110 +144,34 @@ $("#nextBtn, #prevBtn").click(function() {
 $('body').on("click", ".pin", function() {
   $(this).toggleClass('animated bounceIn down');
 });
-
 /**
  * Add pin to whichever input currently has .input-active 
  */
 
-    // $('body').on("click", ".pin:not('.down')", function() {
-    //  let num = activeInput.text();
-    // $("input-active").html(num + 1);
-    // });
-
 $('body').on("click", ".pin:not('.down')", function() {
- if ($(activeInput).is('#a1')) {
-   a1 = a1 + 1;
- } else if ($(activeInput).is('#a2')) {
-   a2 = a2 + 1;
- } else if ($(activeInput).is('#b1')) {
-   b1 = b1 + 1;
- } else if ($(activeInput).is('#b2')) {
-   b2 = b2 + 1;
- } else if ($(activeInput).is('#c1')) {
-   c1 = c1 + 1;
- } else if ($(activeInput).is('#c2')) {
-   c2 = c2 + 1;
- } else if ($(activeInput).is('#d1')) {
-   d1 = d1 + 1;
- } else if ($(activeInput).is('#d2')) {
-   d2 = d2 + 1;
- } else if ($(activeInput).is('#e1')) {
-   e1 = e1 + 1;
- } else if ($(activeInput).is('#e2')) {
-   e2 = e2 + 1;
- } else if ($(activeInput).is('#f1')) {
-   f1 = f1 + 1;
- } else if ($(activeInput).is('#f2')) {
-   f2 = f2 + 1;
- } else if ($(activeInput).is('#g1')) {
-   g1 = g1 + 1;
- } else if ($(activeInput).is('#g2')) {
-   g2 = g2 + 1;
- } else if ($(activeInput).is('#h1')) {
-   h1 = h1 + 1;
- } else if ($(activeInput).is('#h2')) {
-   h2 = h2 + 1;
- } else if ($(activeInput).is('#i1')) {
-   i1 = i1 + 1;
- } else if ($(activeInput).is('#i2')) {
-   i2 = i2 + 1;
- } else if ($(activeInput).is('#j1')) {
-   j1 = j1 + 1;
- } else if ($(activeInput).is('#j2')) {
-   j2 = j2 + 1;
- } else if ($(activeInput).is('#j3')) {
-   j3 = j3 + 1;
- }
+  // Get text from active.Input
+  let value = $('.input-active').text();
+  // If text is '' then change it to 1, otherwise +1 to it
+  if (value === "") {
+    value = 1;
+  } else {
+    value = parseInt(value) + 1;  
+  }
+  // Print value back to active input
+  $('.input-active').text(value);
 });
 
 /**
  * Subtract pin from whichever input currently has .input-active 
  */
 
-$('body').on("click", ".down", function() {
- if ($(activeInput).is('#a1')) {
-   a1 = a1 - 1;
- } else if ($(activeInput).is('#a2')) {
-   a2 = a2 - 1;
- } else if ($(activeInput).is('#b1')) {
-   b1 = b1 - 1;
- } else if ($(activeInput).is('#b2')) {
-   b2 = b2 - 1;
- } else if ($(activeInput).is('#c1')) {
-   c1 = c1 - 1;
- } else if ($(activeInput).is('#c2')) {
-   c2 = c2 - 1;
- } else if ($(activeInput).is('#d1')) {
-   d1 = d1 - 1;
- } else if ($(activeInput).is('#d2')) {
-   d2 = d2 - 1;
- } else if ($(activeInput).is('#e1')) {
-   e1 = e1 - 1;
- } else if ($(activeInput).is('#e2')) {
-   e2 = e2 - 1;
- } else if ($(activeInput).is('#f1')) {
-   f1 = f1 - 1;
- } else if ($(activeInput).is('#f2')) {
-   f2 = f2 - 1;
- } else if ($(activeInput).is('#g1')) {
-   g1 = g1 - 1;
- } else if ($(activeInput).is('#g2')) {
-   g2 = g2 - 1;
- } else if ($(activeInput).is('#h1')) {
-   h1 = h1 - 1;
- } else if ($(activeInput).is('#h2')) {
-   h2 = h2 - 1;
- } else if ($(activeInput).is('#i1')) {
-   i1 = i1 - 1;
- } else if ($(activeInput).is('#i2')) {
-   i2 = i2 - 1;
- } else if ($(activeInput).is('#j1')) {
-   j1 = j1 - 1;
- } else if ($(activeInput).is('#j2')) {
-   j2 = j2 - 1;
- } else if ($(activeInput).is('#j3')) {
-   j3 = j3 - 1;
- }
+ $('body').on("click", ".down", function() {
+  // get text from active.Input
+  let value = $('.input-active').text();
+  // turn it into a number and +1
+  let num = parseInt(value) - 1;
+  // print it to active input
+  $('.input-active').text(num);
 });
 
 /**
@@ -255,49 +179,8 @@ $('body').on("click", ".down", function() {
  */
 
 $("#gutterBtn").click(function() {
- if ($(activeInput).is('#a1')) {
-   a1 = 0;
- } else if ($(activeInput).is('#a2')) {
-   a2 = 0;
- } else if ($(activeInput).is('#b1')) {
-   b1 = 0;
- } else if ($(activeInput).is('#b2')) {
-   b2 = 0;
- } else if ($(activeInput).is('#c1')) {
-   c1 = 0;
- } else if ($(activeInput).is('#c2')) {
-   c2 = 0;
- } else if ($(activeInput).is('#d1')) {
-   d1 = 0;
- } else if ($(activeInput).is('#d2')) {
-   d2 = 0;
- } else if ($(activeInput).is('#e1')) {
-   e1 = 0;
- } else if ($(activeInput).is('#e2')) {
-   e2 = 0;
- } else if ($(activeInput).is('#f1')) {
-   f1 = 0;
- } else if ($(activeInput).is('#f2')) {
-   f2 = 0;
- } else if ($(activeInput).is('#g1')) {
-   g1 = 0;
- } else if ($(activeInput).is('#g2')) {
-   g2 = 0;
- } else if ($(activeInput).is('#h1')) {
-   h1 = 0;
- } else if ($(activeInput).is('#h2')) {
-   h2 = 0;
- } else if ($(activeInput).is('#i1')) {
-   i1 = 0;
- } else if ($(activeInput).is('#i2')) {
-   i2 = 0;
- } else if ($(activeInput).is('#j1')) {
-   j1 = 0;
- } else if ($(activeInput).is('#j2')) {
-   j2 = 0;
- } else if ($(activeInput).is('#j3')) {
-   j3 = 0;
- }
+  // print it to active input
+  $('.input-active').text(0);
 });
 
 /**

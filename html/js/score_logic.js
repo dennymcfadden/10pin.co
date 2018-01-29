@@ -1,57 +1,80 @@
+  let a1 = null;
+  let a2 = null;
+  let b1 = null;
+  let b2 = null;
+  let c1 = null;
+  let c2 = null;
+  let d1 = null;
+  let d2 = null;
+  let e1 = null;
+  let e2 = null;
+  let f1 = null;
+  let f2 = null;
+  let g1 = null;
+  let g2 = null;
+  let h1 = null;
+  let h2 = null;
+  let i1 = null;
+  let i2 = null;
+  let j1 = null;
+  let j2 = null;
+  let j3 = null;
+
 /**
- * Set variables for each ball
+ * Update variables whenever a ball is clicked
  */
 
-// let a1 = parseInt('#a1');
-let a1 = null;
-let a2 = null;
-let b1 = null;
-let b2 = null;
-let c1 = null;
-let c2 = null;
-let d1 = null;
-let d2 = null;
-let e1 = null;
-let e2 = null;
-let f1 = null;
-let f2 = null;
-let g1 = null;
-let g2 = null;
-let h1 = null;
-let h2 = null;
-let i1 = null;
-let i2 = null;
-let j1 = null;
-let j2 = null;
-let j3 = null;
+$('body').on("click", ".pin", function() {
+  a1 = parseInt($('#a1').text());
+  a2 = parseInt($('#a2').text());
+  b1 = parseInt($('#b1').text());
+  b2 = parseInt($('#b2').text());
+  c1 = parseInt($('#c1').text());
+  c2 = parseInt($('#c2').text());
+  d1 = parseInt($('#d1').text());
+  d2 = parseInt($('#d2').text());
+  e1 = parseInt($('#e1').text());
+  e2 = parseInt($('#e2').text());
+  f1 = parseInt($('#f1').text());
+  f2 = parseInt($('#f2').text());
+  g1 = parseInt($('#g1').text());
+  g2 = parseInt($('#g2').text());
+  h1 = parseInt($('#h1').text());
+  h2 = parseInt($('#h2').text());
+  i1 = parseInt($('#i1').text());
+  i2 = parseInt($('#i2').text());
+  j1 = parseInt($('#j1').text());
+  j2 = parseInt($('#j2').text());
+  j3 = parseInt($('#j3').text());
+});
 
 /**
  * Print value of variables whenever a pin is clicked
  */
 
-$('body').on("click", ".pin, #gutterBtn", function() {
-  $("#a1").html(a1);
-  $("#a2").html(a2);
-  $("#b1").html(b1);
-  $("#b2").html(b2);
-  $("#c1").html(c1);
-  $("#c2").html(c2);
-  $("#d1").html(d1);
-  $("#d2").html(d2);
-  $("#e1").html(e1);
-  $("#e2").html(e2);
-  $("#f1").html(f1);
-  $("#f2").html(f2);
-  $("#g1").html(g1);
-  $("#g2").html(g2);
-  $("#h1").html(h1);
-  $("#h2").html(h2);
-  $("#i1").html(i1);
-  $("#i2").html(i2);
-  $("#j1").html(j1);
-  $("#j2").html(j2);
-  $("#j3").html(j3);
-});
+// $('body').on("click", ".pin, #gutterBtn", function() {
+//   $("#a1").html(a1);
+//   $("#a2").html(a2);
+//   $("#b1").html(b1);
+//   $("#b2").html(b2);
+//   $("#c1").html(c1);
+//   $("#c2").html(c2);
+//   $("#d1").html(d1);
+//   $("#d2").html(d2);
+//   $("#e1").html(e1);
+//   $("#e2").html(e2);
+//   $("#f1").html(f1);
+//   $("#f2").html(f2);
+//   $("#g1").html(g1);
+//   $("#g2").html(g2);
+//   $("#h1").html(h1);
+//   $("#h2").html(h2);
+//   $("#i1").html(i1);
+//   $("#i2").html(i2);
+//   $("#j1").html(j1);
+//   $("#j2").html(j2);
+//   $("#j3").html(j3);
+// });
 
 /**
  * Calculate frame scores whenever prevBtn or nextBtn is clicked
