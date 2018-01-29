@@ -1,9 +1,9 @@
-let activeInput = undefined;
-let activePins = undefined;
-
 /**
  * Update global variables on page load
  */
+
+let activeInput = undefined;
+let activePins = undefined;
 
 $(document).ready(function(){
   activeInput = $('.input-active');
@@ -146,7 +146,7 @@ $('body').on("click", ".pin", function() {
 
 $('body').on("click", ".pin:not('.down')", function() {
   // Get text from active.Input
-  let value = $('.input-active').text();
+  let value = $('.input-active').data('score');
   // If text is '' then change it to 1, otherwise +1 to it
   if (value === "") {
     value = 1;
@@ -154,8 +154,10 @@ $('body').on("click", ".pin:not('.down')", function() {
     value = parseInt(value) + 1;  
   }
   // Print value back to active input
+  $('.input-active').data('score', value);
   $('.input-active').text(value);
 });
+
 
 /**
  * Subtract pin from whichever input currently has .input-active 
