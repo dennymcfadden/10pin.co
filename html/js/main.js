@@ -40,24 +40,21 @@ $(document).ready(function(){
  */
 
 $("#nextBtn").click(function() {
-  if ($(activeInput).data('ball') === 2) {
-    // Make next pinset visible
+  // If activeInput is on ball 2, go to next frame
+  if ($(activeInput).not('#j2').data('ball') === 2) {
     $(activePins).toggleClass("invisible").next().toggleClass("invisible");
-    // Move .fame-active to next frame
     $(".frame.frame-active").removeClass("frame-active").next().addClass('frame-active');
-    activePins = $(".pinset").not(".invisible");
   }
+  activePins = $(".pinset").not(".invisible");
 });
 
 $("#prevBtn").click(function() {
-  if ($(activeInput).is('#a1')) {
-  } else if ($(activeInput).data('ball') === 1) {
-    // Make previous pinset visible
+  // If activeInput is on ball 1, go to previous frame
+  if ($(activeInput).not('#a1').data('ball') === 1) {
     $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
-    // Move .fame-active to prev frame
     $(".frame.frame-active").removeClass("frame-active").prev().addClass('frame-active');
-    activePins = $(".pinset").not(".invisible");
   }
+  activePins = $(".pinset").not(".invisible");
 });
 
 /**
@@ -67,27 +64,23 @@ $("#prevBtn").click(function() {
 $("#nextBtn").click(function() {
   if (j1 === 10 && $('.input-active').is('#j1')) {
     $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   } else if (j2 === 10 && $('.input-active').is('#j2')) {
     $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   } else if (j1 + j2 === 10 && $('.input-active').is('#j2')) {
     $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   }
+  activePins = $(".pinset").not(".invisible");
 });
 
 $("#prevBtn").click(function() {
   if (j1 === 10 && $('.input-active').is('#j2')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   } else if (j2 === 10 && $('.input-active').is('#j3')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   } else if (j1 + j2 === 10 && $('.input-active').is('#j3')) {
     $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-    activePins = $(".pinset").not(".invisible");
   }
+  activePins = $(".pinset").not(".invisible");
 });
 
 /**
@@ -215,7 +208,7 @@ $('body').on("click", ".pin", function() {
  */
 
 $("#gutterBtn").click(function() {
-  // print it to active input
+  $('.input-active').data('score', 0);
   $('.input-active').text(0);
 });
 
@@ -250,193 +243,69 @@ $('#nextBtn, #prevBtn').click(function() {
  */
 
 $("#nextBtn, #prevBtn, #finishBtn").click(function() {
-  // Calculate result of frame one. Consider strikes & spares.
-  function calcFrameOne() {
-    if (a1 === 10 && b1 === 10 && c1 !== null) {
-      return a1 + b1 + c1;
-    } else if (a1 === 10 && b1 !== null && b2 !== null) {
-      return a1 + b1 + b2;
-    } else if (a1 !== null && a2 !== null && a1 + a2 === 10 && b1 !== null) {
-      return a1 + a2 + b1;
-    } else if (a1 !== null && a2 !== null && a1 + a2 < 10) {
-      return a1 + a2;
+  $('[data-ball="1"]').each(function(index, element) {
+    let prev = $(element).prev().prev().data('total');
+    let num1 = $(element).data('score');
+    let num2 = $(element).next().data('score');
+    let num3 = $(element).next().next().data('score');
+    let num4 = $(element).next().next().next().data('score');
+    let num5 = $(element).next().next().next().next().data('score');
+    let result = "";
+    let sum = "";
+    if (num1 === "" && num3 === 10 && num5 !== "") {
+      result = num1 + num2 + num5;
+    } else if (num1 === 10 && num3 !== "" && num4 !== "") {
+      result = num1 + num3 + num4;
+    } else if (num1 !== "" && num2 !== "" && num1 + num2 === 10 && num3 !== "") {
+      result = num1 + num2 + num3;
+    } else if (num1 !== "" && num2 !== "" && num1 + num2 < 10) {
+      result = num1 + num2;
     } else {
-      return null;
+      result = "";
     }
-  }
-  // Calculate result of frame two. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameTwo() {
-    if (b1 === 10 && c1 === 10 && d1 !== null) {
-      const score = b1 + c1 + d1;
-      return score + frameOneScore;
-    } else if (b1 === 10 && c1 !== null && c2 !== null) {
-      const score = b1 + c1 + c2;
-      return score + frameOneScore;
-    } else if (b1 !== null && b2 !== null && b1 + b2 === 10 && c1 !== null) {
-      const score = b1 + b2 + c1;
-      return score + frameOneScore;
-    } else if (b1 !== null && b2 !== null && b1 + b2 < 10) {
-      const score = b1 + b2;
-      return score + frameOneScore;
-    } else {
-      return null;
+    // Condition for first frame where undefined stops math
+    if (prev === undefined) {
+      prev = 0;
     }
-  }
-  // Calculate result of frame three. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameThree() {
-    if (c1 === 10 && d1 === 10 && e1 !== null) {
-      const score = c1 + d1 + e1;
-      return score + frameTwoScore;
-    } else if (c1 === 10 && d1 !== null && d2 !== null) {
-      const score = c1 + d1 + d2;
-      return score + frameTwoScore;
-    } else if (c1 !== null && c2 !== null && c1 + c2 === 10 && d1 !== null) {
-      const score = c1 + c2 + d1;
-      return score + frameTwoScore;
-    } else if (c1 !== null && c2 !== null && c1 + c2 < 10) {
-      const score = c1 + c2;
-      return score + frameTwoScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame four. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameFour() {
-    if (d1 === 10 && e1 === 10 && f1 !== null) {
-      const score = d1 + e1 + f1;
-      return score + frameThreeScore;
-    } else if (d1 === 10 && e1 !== null && e2 !== null) {
-      const score = d1 + e1 + e2;
-      return score + frameThreeScore;
-    } else if (d1 !== null && d2 !== null && d1 + d2 === 10 && e1 !== null) {
-      const score = d1 + d2 + e1;
-      return score + frameThreeScore;
-    } else if (d1 !== null && d2 !== null && d1 + d2 < 10) {
-      const score = d1 + d2;
-      return score + frameThreeScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame five. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameFive() {
-    if (e1 === 10 && f1 === 10 && g1 !== null) {
-      const score = e1 + f1 + g1;
-      return score + frameFourScore;
-    } else if (e1 === 10 && f1 !== null && f2 !== null) {
-      const score = e1 + f1 + f2;
-      return score + frameFourScore;
-    } else if (e1 !== null && e2 !== null && e1 + e2 === 10 && f1 !== null) {
-      const score = e1 + e2 + f1;
-      return score + frameFourScore;
-    } else if (e1 !== null && e2 !== null && e1 + e2 < 10) {
-      const score = e1 + e2;
-      return score + frameFourScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame six. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameSix() {
-    if (f1 === 10 && g1 === 10 && h1 !== null) {
-      const score = f1 + g1 + h1;
-      return score + frameFiveScore;
-    } else if (f1 === 10 && g1 !== null && g2 !== null) {
-      const score = f1 + g1 + g2;
-      return score + frameFiveScore;
-    } else if (f1 !== null && f2 !== null && f1 + f2 === 10 && g1 !== null) {
-      const score = f1 + f2 + g1;
-      return score + frameFiveScore;
-    } else if (f1 !== null && f2 !== null && f1 + f2 < 10) {
-      const score = f1 + f2;
-      return score + frameFiveScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame seven. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameSeven() {
-    if (g1 === 10 && h1 === 10 && i1 !== null) {
-      const score = g1 + h1 + i1;
-      return score + frameSixScore;
-    } else if (g1 === 10 && h1 !== null && h2 !== null) {
-      const score = g1 + h1 + h2;
-      return score + frameSixScore;
-    } else if (g1 !== null && g2 !== null && g1 + g2 === 10 && h1 !== null) {
-      const score = g1 + g2 + h1;
-      return score + frameSixScore;
-    } else if (g1 !== null && g2 !== null && g1 + g2 < 10) {
-      const score = g1 + g2;
-      return score + frameSixScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame eight. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameEight() {
-    if (h1 === 10 && i1 === 10 && j1 !== null) {
-      const score = h1 + i1 + j1;
-      return score + frameSevenScore;
-    } else if (h1 === 10 && i1 !== null && i2 !== null) {
-      const score = h1 + i1 + i2;
-      return score + frameSevenScore;
-    } else if (h1 !== null && h2 !== null && h1 + h2 === 10 && i1 !== null) {
-      const score = h1 + h2 + i1;
-      return score + frameSevenScore;
-    } else if (h1 !== null && h2 !== null && h1 + h2 < 10) {
-      const score = h1 + h2;
-      return score + frameSevenScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame nine. Consider strikes & spares. Add to sum of previous frames.
-  function calcFrameNine() {
-    if (i1 === 10 && j1 === 10 && j3 !== null) {
-      const score = i1 + j1 + j3;
-      return score + frameEightScore;
-    } else if (i1 === 10 && j1 !== null && j2 !== null) {
-      const score = i1 + j1 + j2;
-      return score + frameEightScore;
-    } else if (i1 !== null && i2 !== null && i1 + i2 === 10 && j1 !== null) {
-      const score = i1 + i2 + j1;
-      return score + frameEightScore;
-    } else if (i1 !== null && i2 !== null && i1 + i2 < 10) {
-      const score = i1 + i2;
-      return score + frameEightScore;
-    } else {
-      return null;
-    }
-  }
-  // Calculate result of frame ten. Consider strikes & spares. Add to sum of previous frames.
+    sum = parseInt(result) + parseInt(prev);
+    $(element).data('total', sum);
+  });
+});
+
+
+$("#nextBtn, #prevBtn, #finishBtn").click(function() {
+  // Special logic for 10th frame. Test, then delete this.
   function calcFrameTen() {
-    if (j1 === 10 && j2 === 10 && j3 !== null) {
-      const score = j1 + j2 + j3;
-      return score + frameNineScore;
-    } else if (j1 === 10 && j2 !== null && j3 !== null) {
-      const score = j1 + j2 + j3;
-      return score + frameNineScore;
-    } else if (j1 !== null && j2 !== null && j1 + j2 === 10 && j3 !== null) {
-      const score = j1 + j2 + j3;
-      return score + frameNineScore;
-    } else if (j1 !== null && j2 !== null && j1 + j2 < 10) {
-      const score = j1 + j2;
-      return score + frameNineScore;
+    let num1 = $('#j1').data('score');
+    let num2 = $('#j2').data('score');
+    let num3 = $('#j3').data('score');
+    let result = "";
+    let sum = "";
+    if (num1 === 10 && num2 === 10 && num3 !== "") {
+      result = num1 + num2 + num3;
+    } else if (num1 === 10 && num2 !== "" && num3 !== "") {
+      result = num1 + num2 + num3;
+    } else if (num1 !== "" && num2 !== "" && num1 + num2 === 10 && num3 !== "") {
+      result = num1 + num2 + num3;
+    } else if (num1 !== "" && num2 !== "" && num1 + num2 < 10) {
+      result = num1 + j2;
     } else {
-      return null;
+      result = "";
     }
+    sum = parseInt(result) + parseInt(prev);
+    $('#j1').data('total', sum);
   }
-  // Store results of calcFrame{X} functions in variables.
-  let frameOneScore = calcFrameOne();
-  let frameTwoScore = calcFrameTwo();
-  let frameThreeScore = calcFrameThree();
-  let frameFourScore = calcFrameFour();
-  let frameFiveScore = calcFrameFive();
-  let frameSixScore = calcFrameSix();
-  let frameSevenScore = calcFrameSeven();
-  let frameEightScore = calcFrameEight();
-  let frameNineScore = calcFrameNine();
-  let frameTenScore = calcFrameTen();
+  // Store results of each frame in variables.
+  let frameOneScore = $('#a1').data('total');
+  let frameTwoScore = $('#b1').data('total');
+  let frameThreeScore = $('#c1').data('total');
+  let frameFourScore = $('#d1').data('total');
+  let frameFiveScore = $('#e1').data('total');
+  let frameSixScore = $('#f1').data('total');
+  let frameSevenScore = $('#g1').data('total');
+  let frameEightScore = $('#h1').data('total');
+  let frameNineScore = $('#i1').data('total');
+  let frameTenScore = $('#j1').data('total');
   // Calculate current score based on latest completed frame.
   function currentScore() {
     if (frameTenScore) {
@@ -519,36 +388,30 @@ $('body').on("click", ".pin, #gutterBtn", function() {
       $(element).next().html('/')
     }
   });
+  // Special rules for 10th frame
+  if (j1 === 10 && j2 === 10 && j3 === 10) {
+    $("#j1").html('X');
+    $("#j2").html('X');
+    $("#j3").html('X');
+  } else if (j3 === 10 && j1 === 10) {
+    $("#j1").html('X');
+    $("#j2").html('-');
+    $("#j3").html('X');
+  } else if (j3 === 10 && j1 + j2 === 10) {
+    $("#j2").html('/');
+    $("#j3").html('X');
+  } else if (j1 === 10 && j2 === 10) {
+    $("#j1").html('X');
+    $("#j2").html('X');
+  } else if (j1 === 10) {
+    $("#j1").html('X');
+  } else if (j1 + j2 === 10) {
+    $("#j2").html('/');
+  }
 });
 
 /**
- * Special rules for 'X' & '/' in 10th frame
- */
-
-$('body').on("click", ".pin, #gutterBtn", function() {
-    if (j1 === 10 && j2 === 10 && j3 === 10) {
-      $("#j1").html('X');
-      $("#j2").html('X');
-      $("#j3").html('X');
-    } else if (j3 === 10 && j1 === 10) {
-      $("#j1").html('X');
-      $("#j2").html('-');
-      $("#j3").html('X');
-    } else if (j3 === 10 && j1 + j2 === 10) {
-      $("#j2").html('/');
-      $("#j3").html('X');
-    } else if (j1 === 10 && j2 === 10) {
-      $("#j1").html('X');
-      $("#j2").html('X');
-    } else if (j1 === 10) {
-      $("#j1").html('X');
-    } else if (j1 + j2 === 10) {
-      $("#j2").html('/');
-    }
-});
-
-/**
- * Reset game when finished
+ * Reset game
  */
 
 $('#newGame').click(function() {
