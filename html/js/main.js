@@ -36,7 +36,7 @@ $(document).ready(function(){
 });
 
 /**
- * Toggle visibility of pinset when switching frames, and update variable
+ * Toggle visibility of pinset when switching to NEXT frame
  */
 
 $("#nextBtn").click(function() {
@@ -45,8 +45,21 @@ $("#nextBtn").click(function() {
     $(activePins).toggleClass("invisible").next().toggleClass("invisible");
     $(".frame.frame-active").removeClass("frame-active").next().addClass('frame-active');
   }
+  // Special logic for 10th frame
+  if (j1 === 10 && $(activeInput).is('#j1')) {
+    $(activePins).toggleClass("invisible").next().toggleClass("invisible");
+  } else if (j2 === 10 && $(activeInput).is('#j2')) {
+    $(activePins).toggleClass("invisible").next().toggleClass("invisible");
+  } else if (j1 + j2 === 10 && $(activeInput).is('#j2')) {
+    $(activePins).toggleClass("invisible").next().toggleClass("invisible");
+  }
+  // Update variable
   activePins = $(".pinset").not(".invisible");
 });
+
+/**
+ * Toggle visibility of pinset when switching to PREV frame
+ */
 
 $("#prevBtn").click(function() {
   // If activeInput is on ball 1, go to previous frame
@@ -54,32 +67,15 @@ $("#prevBtn").click(function() {
     $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
     $(".frame.frame-active").removeClass("frame-active").prev().addClass('frame-active');
   }
-  activePins = $(".pinset").not(".invisible");
-});
-
-/**
- * Special pinset logic for 10th frame
- */
-
-$("#nextBtn").click(function() {
-  if (j1 === 10 && $('.input-active').is('#j1')) {
-    $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
-  } else if (j2 === 10 && $('.input-active').is('#j2')) {
-    $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
-  } else if (j1 + j2 === 10 && $('.input-active').is('#j2')) {
-    $(activePins).toggleClass("visible invisible").next().toggleClass("visible invisible");
+  // Special logic for 10th frame
+  if (j1 === 10 && $(activeInput).is('#j2')) {
+    $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
+  } else if (j2 === 10 && $(activeInput).is('#j3')) {
+    $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
+  } else if (j1 + j2 === 10 && $(activeInput).is('#j3')) {
+    $(activePins).toggleClass("invisible").prev().toggleClass("invisible");
   }
-  activePins = $(".pinset").not(".invisible");
-});
-
-$("#prevBtn").click(function() {
-  if (j1 === 10 && $('.input-active').is('#j2')) {
-    $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-  } else if (j2 === 10 && $('.input-active').is('#j3')) {
-    $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-  } else if (j1 + j2 === 10 && $('.input-active').is('#j3')) {
-    $(".pinset.visible").toggleClass("visible invisible").prev().toggleClass("visible invisible");
-  }
+  // Update variable
   activePins = $(".pinset").not(".invisible");
 });
 
@@ -110,33 +106,22 @@ $("#prevBtn").click(function() {
 });
 
 /**
- * Print current frame & ball to nav bar
+ * Various other function on #nextBtn & #prevBtn
  */
 
 $('#nextBtn, #prevBtn').click(function() {
+  // Print current frame to nav bar
   $('#currentFrame').html('Frame ' + activeInput.data('frame'));
   $('#currentBall').html('Ball ' + activeInput.data('ball'));
-});
-
-/**
- * Move frame-active class to the unused ball
- */
-
-$("#nextBtn, #prevBtn").click(function() {
+  // Move .frame-active to unused ball
   if ($(activeInput).data('ball') === 1) {
     $(".ball.frame-active").removeClass("frame-active"); 
     $(activeInput).next().addClass("frame-active"); 
   } else if ($(activeInput).data('ball') === 2) {
     $(".ball.frame-active").removeClass("frame-active"); 
-    $(activeInput).prev().addClass("frame-active"); 
+    $(activeInput).prev().addClass("frame-active");
   }
-});
-
-/**
- * Special frame-active rules for 10th frame
- */
-
-$("#nextBtn, #prevBtn").click(function() {
+  // Special .frame-active rules for 10th frame
   if ($(activeInput).is('#j3')) {
     $("#j3").removeClass("frame-active");
     $("#j1, #j2").addClass("frame-active"); 
@@ -148,6 +133,12 @@ $("#nextBtn, #prevBtn").click(function() {
     $("#j2").addClass("frame-active"); 
   } else if ($(activeInput).is('#i2')) {
     $("#j3").removeClass("frame-active"); 
+  }
+  // Highlight 'Finished' button if 10th frame
+  if ($(activeInput).is('#j1, #j2, #j3')) {
+    $("#finishBtn").css("color", "var(--blue)"); 
+  } else {
+    $("#finishBtn").css("color", "#18466f"); 
   }
 });
 
@@ -202,7 +193,6 @@ $('body').on("click", ".pin", function() {
   j3 = parseInt($('#j3').data('score'));
 });
 
-
 /**
  * When gutterball is clicked, set .active-input to 0 
  */
@@ -223,18 +213,6 @@ $('body').on("click", ".pin, #gutterBtn, #nextBtn, #prevBtn", function() {
     $("#j3").addClass("frame-active");
   } else if ($(activeInput).is('#j1, #j2') && j1 + j2 === 10) {
     $("#j3").addClass("frame-active");
-  }
-});
-
-/**
- * Highlight Finish button in 10th frame
- */
-
-$('#nextBtn, #prevBtn').click(function() {
-  if ($(activeInput).is('#j1, #j2, #j3')) {
-    $("#finishBtn").css("color", "var(--blue)"); 
-  } else if ($(activeInput).not('#j1, #j2, #j3')) {
-    $("#finishBtn").css("color", "#18466f"); 
   }
 });
 
@@ -274,7 +252,7 @@ $("#nextBtn, #prevBtn, #finishBtn").click(function() {
 
 
 $("#nextBtn, #prevBtn, #finishBtn").click(function() {
-  // Special logic for 10th frame. Test, then delete this.
+  // Special logic for 10th frame.
   function calcFrameTen() {
     let num1 = $('#j1').data('score');
     let num2 = $('#j2').data('score');
@@ -389,25 +367,18 @@ $('body').on("click", ".pin, #gutterBtn", function() {
     }
   });
   // Special rules for 10th frame
-  if (j1 === 10 && j2 === 10 && j3 === 10) {
+  if (j1 === 10) {
     $("#j1").html('X');
-    $("#j2").html('X');
-    $("#j3").html('X');
-  } else if (j3 === 10 && j1 === 10) {
-    $("#j1").html('X');
-    $("#j2").html('-');
-    $("#j3").html('X');
-  } else if (j3 === 10 && j1 + j2 === 10) {
-    $("#j2").html('/');
-    $("#j3").html('X');
-  } else if (j1 === 10 && j2 === 10) {
-    $("#j1").html('X');
-    $("#j2").html('X');
-  } else if (j1 === 10) {
-    $("#j1").html('X');
-  } else if (j1 + j2 === 10) {
+  }
+  if (j1 !== 10 && j1 + j2 === 10) {
     $("#j2").html('/');
   }
+  if (j2 === 10) {
+    $("#j2").html('X');
+  }
+  if (j3 === 10) {
+    $("#j3").html('X');
+  } 
 });
 
 /**
