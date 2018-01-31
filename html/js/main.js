@@ -35,6 +35,15 @@ $(document).ready(function(){
   activePins = $(".pinset").not(".invisible");
 });
 
+$("#gutterBallBtn").click(function() {
+  alert ('gutter ball');
+});
+
+$("#finishBtn").click(function() {
+  alert ('finished');
+});
+
+
 /**
  * Toggle visibility of pinset when switching to NEXT frame
  */
